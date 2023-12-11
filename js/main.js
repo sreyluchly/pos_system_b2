@@ -46,3 +46,16 @@ function showCard() {
     }
 }
 // showCard();
+
+
+
+// test 
+let buttons = document.querySelectorAll('.nav-left button');
+for (const btn of buttons) {
+    btn.onclick = () => {
+        for (const button of buttons) {
+            button.setAttribute("class", "")
+        }
+        btn.setAttribute("class", "after");
+    }
+}

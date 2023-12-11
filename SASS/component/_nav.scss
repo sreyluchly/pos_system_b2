@@ -1,24 +1,9 @@
 @import "variable";
+@import "group-mixin";
 
 nav {
-    grid-column: 1 / 13;
-    padding: 1% 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: $mainTitleColor;
-    border-bottom: 1px solid $mainBorderColor;
-    .nav-right {
-        ul {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            li {
-                padding: 10px;
-                font-size: 16px;
-                transition: 0.3s;
-                cursor: pointer;
-            }
-        }
-    }
+    @include flexBetween;
+    padding: 20px $padding 0px;
+    background: $mainBg;
+    overflow: hidden;
 }
