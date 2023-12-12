@@ -1,0 +1,29 @@
+@import "group-mixin";
+
+.card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 170px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    .card-header {
+        height: 60%;
+        overflow: hidden;
+        border-radius: 5px;
+        img {
+            width: 100%;
+        }
+    }
+    .card-footer {
+        height: 40%;
+        flex-direction: column;
+        @include flexBetween;
+        h2 {
+            font-size: 18px;
+        }
+    }
+}

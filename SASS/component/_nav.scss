@@ -2,8 +2,44 @@
 @import "group-mixin";
 
 nav {
+    grid-column: 1 / 13;
+    padding: 5px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
     @include flexBetween;
-    padding: 20px $padding 0px;
     background: $mainBg;
-    overflow: hidden;
+    .nav-left, .nav-center {
+        flex: 2;
+    }
+    .nav-right {
+        flex: 1;
+        @include flexBetween;
+        height: 100%;
+        align-items: center;
+        span {
+            color: white;
+            cursor: pointer;
+        }
+        .profile {
+            display: flex;
+            color: white;
+            p {
+                margin-top: 5px;
+            }
+            span {
+                color: $mainBtnBg;
+            }
+        }
+        button {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            @include flexCenter;
+            &:active {
+                background: #c9c9c93d;
+            }
+        }
+    }
 }
