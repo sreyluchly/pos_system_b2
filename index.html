@@ -10,7 +10,9 @@
 <body>
     <nav>
         <div class="nav-left">
-            <h1>POS System for Restaurant</h1>
+            <h1>
+                <!--  -->
+            </h1>
         </div>
         <div class="nav-right">
             <!-- <span class="material-symbols-outlined">menu</span> -->
@@ -21,16 +23,16 @@
         </div>
     </nav>
     <ul class="menu">
-        <li>
-            <a href="#"><span class="material-symbols-outlined">grid_view</span></a>
+        <li class="after">
+            <span class="material-symbols-outlined">grid_view</span>
             <span>Dashboard</span>
         </li>
         <li>
-            <a href="#"><span class="material-symbols-outlined">production_quantity_limits</span></a>
-            <span>Order</span>
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span>Products</span>
         </li>
         <li>
-            <a href="#"><span class="material-symbols-outlined">groups</span></a>
+            <span class="material-symbols-outlined">groups</span>
             <span>Customers</span>
         </li>
     </ul>
@@ -38,7 +40,11 @@
     <!--  -->
     <main>
         <div class="search-item">
-            <h2>All Goods</h2>
+            <div class="category">
+                <button class="category-after">All Category</button>
+                <button>Sea Foods</button>
+                <button>Khmer Foods</button>
+            </div>
             <div class="search">
                 <label for="search" style="cursor: pointer;">
                     <span class="material-symbols-outlined">search</span>
@@ -52,22 +58,44 @@
     </main>
 
     <aside>
-        <table>
-            <thead>
-                <tr>
-                    <th>.. : quantity</th>
-                    <th>...$</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <!-- <tr>
-                    <td>2 : fried rice</td>
-                    <td>10.00$</td>
-                </tr> -->
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>.. : quantity</th>
+                        <th>...$</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <!-- <tr>
+                        <td>2 : fried rice</td>
+                        <td>10.00$</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <div class="show-ticket">
+            <div class="prices">
+                <!-- <span class="material-symbols-outlined">attach_money</span> -->
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span>100.00$</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span>100.00$</span>
+                </div>
+            </div>
+            <button type="button">Send</button>
+        </div>
     </aside>
+
+    <div class="form-container">
+        <form>
+            
+        </form>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

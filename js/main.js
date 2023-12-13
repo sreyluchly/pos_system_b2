@@ -1,14 +1,27 @@
 const mainContainer = document.querySelector(".main-container");
 const tbody = document.querySelector('tbody');
+const list = document.querySelectorAll('ul li');
 let arrayImage = [
-    {img: "IMG/IMG_food/image1.jpg", name: "Ash", price: 50},
-    {img: "IMG/IMG_food/image2.jpg", name: "Spaghetti", price: 50},
-    {img: "IMG/IMG_food/image3.jpg", name: "Chinese Noodles", price: 50},
-    {img: "IMG/IMG_food/image4.jpg", name: "Sushi", price: 50}
+    {img: "IMG/image1.jpg", name: "Ash", price: 50},
+    {img: "IMG/image2.jpg", name: "Spaghetti", price: 50},
+    {img: "IMG/image3.jpg", name: "Chinese Noodles", price: 50},
+    {img: "IMG/image4.jpg", name: "Sushi", price: 50},
+    {img: "IMG/image5.jpg", name: "Sushi", price: 50},
+    {img: "IMG/image6.jpg", name: "Sushi", price: 50},
+    {img: "IMG/image7.jpg", name: "Sushi", price: 50},
+    {img: "IMG/image8.jpg", name: "Sushi", price: 50},
+    {img: "IMG/image9.jpg", name: "Sushi", price: 50}
 ];
+let arrayDetail = [];
 
-function saveStorage() {}
-function loadStorage() {}
+function saveStorage() {
+    localStorage.setItem("arrayImage", JSON.stringify(arrayImage));
+}
+function loadStorage() {
+    if (localStorage.getItem("arrayImage") != null) {
+        arrayImage = JSON.parse(localStorage.getItem("arrayImage"));
+    }
+}
 
 function productDetail(event) {
     let index = event.target.closest('.card').dataset.index;
@@ -26,12 +39,15 @@ function productDetail(event) {
 
 // Show Card
 function showCard() {
+    for (const card of document.querySelectorAll(".card")) {
+        card.remove();
+    }
     for (let i=0; i<arrayImage.length; i++) {
         const card = document.createElement('div');
         const cardHeader = document.createElement('div');
         const cardFooter = document.createElement('div');
         const img = document.createElement('img');
-        const foodName = document.createElement('span');
+        const foodName = document.createElement('h4');
         const price = document.createElement('h2');
 
         card.className = "card";
@@ -56,7 +72,20 @@ function showCard() {
         card.addEventListener("click", productDetail);
     }
 }
-showCard();
+
+// Menu proccess
+for (const li of list) {
+    li.onclick = () => {
+        for (const li of list) {
+            li.className = "";
+            li.firstElementChild.nextElementSibling.style.color = "black";
+            li.firstElementChild.style.color = "black";
+        }
+        li.className = "after";
+        li.firstElementChild.style.color = "white";
+        li.firstElementChild.nextElementSibling.style.color = "white";
+    }
+}
 
 // Button Dark and Light mode
 const btnTheme = document.querySelector(".nav-right button");
@@ -71,3 +100,6 @@ btnTheme.onclick = () => {
         themeMode.textContent = "dark_mode";
     }
 }
+
+loadStorage();
+showCard();

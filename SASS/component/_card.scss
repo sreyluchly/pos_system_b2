@@ -6,8 +6,8 @@
     flex-direction: column;
     border-radius: 5px;
     overflow: hidden;
-    height: 200px;
-    padding: 5px;
+    height: 220px;
+    padding: 10px;
     cursor: pointer;
     transition: 0.3s;
     .card-header {
@@ -24,7 +24,11 @@
     .card-footer {
         height: 35%;
         flex-direction: column;
+        padding: 5px 0px 0px 0px;
         @include flexBetween;
+        h4 {
+            font-weight: 500;
+        }
         h2 {
             font-size: 18px;
         }
