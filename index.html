@@ -10,15 +10,10 @@
 <body>
     <nav>
         <div class="nav-left">
-            <!-- <button type="button" class="after">Dashboard</button>
-            <button type="button">Receipts</button>
-            <button type="button">Customers</button> -->
+            <h1>POS System for Restaurant</h1>
         </div>
-
-        <div class="nav-center"></div>
-
         <div class="nav-right">
-            <span class="material-symbols-outlined">menu</span>
+            <!-- <span class="material-symbols-outlined">menu</span> -->
             <div class="profile"><p id="name">Name</p><span class="material-symbols-outlined">Lock</span></div>
             <button type="button">
                 <span class="material-symbols-outlined dark">dark_mode</span>
@@ -28,19 +23,22 @@
     <ul class="menu">
         <li>
             <a href="#"><span class="material-symbols-outlined">grid_view</span></a>
+            <span>Dashboard</span>
         </li>
         <li>
             <a href="#"><span class="material-symbols-outlined">production_quantity_limits</span></a>
+            <span>Order</span>
         </li>
         <li>
             <a href="#"><span class="material-symbols-outlined">groups</span></a>
+            <span>Customers</span>
         </li>
     </ul>
 
     <!--  -->
     <main>
         <div class="search-item">
-            <h2>Hello</h2>
+            <h2>All Goods</h2>
             <div class="search">
                 <label for="search" style="cursor: pointer;">
                     <span class="material-symbols-outlined">search</span>
@@ -49,20 +47,26 @@
             </div>
         </div>
         <div class="main-container">
-            <!-- <div class="card">
-                <div class="card-header">
-                    <img src="IMG/image1.jpg" alt="">
-                </div>
-                <div class="card-footer">
-                    <span class="product-name">Fried Eggs</span>
-                    <h3>$100</h3>
-                </div>
-            </div> -->
+            <!-- Created in Javascript -->
         </div>
     </main>
 
     <aside>
-        
+        <table>
+            <thead>
+                <tr>
+                    <th>.. : quantity</th>
+                    <th>...$</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- <tr>
+                    <td>2 : fried rice</td>
+                    <td>10.00$</td>
+                </tr> -->
+            </tbody>
+        </table>
     </aside>
 
     <script src="js/main.js"></script>

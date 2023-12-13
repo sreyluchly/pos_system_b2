@@ -1,24 +1,32 @@
 const mainContainer = document.querySelector(".main-container");
+const tbody = document.querySelector('tbody');
 let arrayImage = [
-    {img: "IMG/IMG_food/image1.jpg", name: "Apples", price: 50},
-    {img: "IMG/IMG_food/image2.jpg", name: "Bananas", price: 50},
-    {img: "IMG/IMG_food/image3.jpg", name: "Oranges", price: 50},
-    {img: "IMG/IMG_food/image4.jpg", name: "Papayas", price: 50},
-    {img: "IMG/IMG_food/image5.jpg", name: "Berries", price: 50},
-    {img: "IMG/IMG_food/image6.jpg", name: "Mangoes", price: 50},
-    {img: "IMG/IMG_food/image7.jpg", name: "Pineapples" , price: 50},
-    {img: "IMG/IMG_food/image8.jpg", name: "Watermelons" , price: 50},
-    {img: "IMG/IMG_food/image8.jpg", name: "Watermelons" , price: 50},
-    {img: "IMG/IMG_food/image8.jpg", name: "Watermelons" , price: 50},
-    {img: "IMG/IMG_food/image8.jpg", name: "Watermelons" , price: 50},
-    {img: "IMG/IMG_food/image8.jpg", name: "Watermelons" , price: 50},
-    {img: "IMG/IMG_food/image8.jpg", name: "Watermelons" , price: 50}
+    {img: "IMG/IMG_food/image1.jpg", name: "Ash", price: 50},
+    {img: "IMG/IMG_food/image2.jpg", name: "Spaghetti", price: 50},
+    {img: "IMG/IMG_food/image3.jpg", name: "Chinese Noodles", price: 50},
+    {img: "IMG/IMG_food/image4.jpg", name: "Sushi", price: 50}
 ];
 
 function saveStorage() {}
 function loadStorage() {}
+
+function productDetail(event) {
+    let index = event.target.closest('.card').dataset.index;
+    console.log(arrayImage[index]);
+    const tr = document.createElement('tr');
+    const tdName = document.createElement('td');
+    const tdPrice = document.createElement('td');
+
+    tdPrice.textContent = arrayImage[index].price + "$";
+    tdName.textContent = arrayImage[index].name;
+    tr.appendChild(tdName);
+    tr.appendChild(tdPrice);
+    tbody.appendChild(tr);
+}
+
+// Show Card
 function showCard() {
-    for (const images of arrayImage) {
+    for (let i=0; i<arrayImage.length; i++) {
         const card = document.createElement('div');
         const cardHeader = document.createElement('div');
         const cardFooter = document.createElement('div');
@@ -27,13 +35,14 @@ function showCard() {
         const price = document.createElement('h2');
 
         card.className = "card";
+        card.dataset.index = i;
         cardHeader.className = "card-header";
         cardFooter.className = "card-footer";
         foodName.className = "product-name";
     
-        img.src = images.img;
-        foodName.textContent = images.name;
-        price.textContent = images.price + "$"; 
+        img.src = arrayImage[i].img;
+        foodName.textContent = arrayImage[i].name;
+        price.textContent = arrayImage[i].price + "$"; 
         
         cardHeader.appendChild(img);
         cardFooter.appendChild(foodName);
@@ -43,28 +52,19 @@ function showCard() {
         card.appendChild(cardFooter);
 
         mainContainer.appendChild(card);
+
+        card.addEventListener("click", productDetail);
     }
 }
 showCard();
 
-// Button on Navbar
-let buttons = document.querySelectorAll('.nav-left button');
-for (const btn of buttons) {
-    btn.onclick = () => {
-        for (const button of buttons) {
-            button.setAttribute("class", "")
-        }
-        btn.setAttribute("class", "after");
-    }
-}
-
 // Button Dark and Light mode
-const btnTheme = document.querySelector(".nav-right button")
+const btnTheme = document.querySelector(".nav-right button");
 const themeMode = document.querySelector('.dark');
 btnTheme.onclick = () => {
     themeMode.classList.toggle('dark');
     if (themeMode.className.includes("dark")) {
-        document.body.style.background = "black";
+        document.body.style.background = "#373D46";
         themeMode.textContent = "light_mode";
     }else {
         document.body.style.background = "white";

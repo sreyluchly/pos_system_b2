@@ -31,15 +31,17 @@ aside {
     grid-column: 1 / 2;
     display: flex;
     flex-direction: column;
+    background: $mainBg;
     li {
-        padding: 20px;
-        font-size: 16px;
+        @include flexCenter;
+        flex-direction: column;
+        padding: 20px 5px;
         transition: 0.3s;
         cursor: pointer;
         border-bottom: 1px solid $mainBorderColor;
-
-        &:hover {
-            background-color: $mainBorderColor;
+        gap: 7px;
+        span {
+            color: white;
         }
 
         &:hover a,
@@ -50,23 +52,18 @@ aside {
         a {
             width: 100%;
             height: 100%;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black;
+            @include flexCenter;
         }
     }
 }
 
 main {
-    grid-column: 2 / 9;
-    background-color: hsl(0, 0%, 100%, );
-    padding: 10px;
     @include flexCenter;
     flex-direction: column;
+    padding: 10px 0 0 0;
+    grid-column: 2 / 10;
+    background-color: hsl(0, 0%, 100%, );
     gap: 20px;
-    border-left: 1px solid $mainBorderColor;
     border-right: 1px solid $mainBorderColor;
 
     .search-item {
@@ -83,44 +80,62 @@ main {
                 position: absolute;
                 top: 20%;
                 left: 5px;
+                color: $mainBg;
             }
             input {
                 width: 100px;
-                border: 1px solid $mainBorderColor;
                 padding: 5px 0px 5px 30px;
                 border-radius: 50px;
                 color: rgb(50, 50, 50);
                 transition: width 0.4s ease-in-out;
                 font-size: 17px;
+                outline: 1px ridge rgb(132, 132, 132, .3);
                 &:focus {
-                    border: 1px solid $mainBorderColor;
-                    width: 250px;
+                    width: 300px;
                     padding: 5px 0px 5px 30px;
+                    outline: 2px ridge rgb(132, 132, 132, .3);
                 }
             }
-        }
-        ::placeholder {
-            color: rgb(173, 173, 173);
+            ::placeholder {
+                color: rgb(132, 132, 132);
+            }
         }
     }
 
     .main-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 10px;
         overflow-y: scroll;
         width: 100%;
         height: 100%;
         padding: 10px;
-        border-radius: 5px;
         border: 1px solid #eeeeee;
-        background-color: hsl(0, 0%, 0%, 0.8);
+        background-color: $mainBg;
         @import "component/card";
     }
 }
 
 aside {
-    grid-column: 9 / 13;
+    grid-column: 10 / 13;
+    overflow-y: scroll;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        th {
+            color: $mainBg;
+        }
+        tr {
+            border-bottom: 1px solid #eeeeee;
+        }
+        th, td {
+            padding: 20px;
+            text-align: end
+        }
+        th:nth-child(1), td:nth-child(1) {
+            text-align: start;
+        }
+    }
 }
 
 @import "component/button";
