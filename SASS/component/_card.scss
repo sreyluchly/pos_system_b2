@@ -15,9 +15,7 @@
         height: 65%;
         overflow: hidden;
         border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexCenter;
         img {
             width: 100%;
         }
