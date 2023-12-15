@@ -1,3 +1,4 @@
+@import "group-mixin";
 
 .card {
     background-color: #fff;
@@ -5,24 +6,31 @@
     flex-direction: column;
     border-radius: 5px;
     overflow: hidden;
-    height: 170px;
-    padding: 5px;
+    height: 220px;
+    padding: 10px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     .card-header {
-        height: 60%;
+        height: 65%;
         overflow: hidden;
         border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
             width: 100%;
         }
     }
     .card-footer {
-        height: 40%;
+        height: 35%;
         flex-direction: column;
+        padding: 5px 0px 0px 0px;
         @include flexBetween;
+        h4 {
+            font-weight: 500;
+        }
         h2 {
-            color: $mainTitleColor;
             font-size: 18px;
         }
     }
