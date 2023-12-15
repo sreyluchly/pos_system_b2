@@ -11,27 +11,25 @@
 }
 
 body {
+  position: relative;
   height: 100vh;
   display: grid;
   grid-template: repeat(12, 1fr)/repeat(12, 1fr);
 }
 
 nav {
-  grid-column: 1/19;
+  grid-column: 3/19;
   padding: 5px 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
   background: #373D46;
-  box-shadow: hsla(0, 0%, 62%, 0.129) 0px 3px 8px;
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
   z-index: 100;
 }
 nav .nav-left {
   flex: 6;
-  color: #16CD16;
+  color: #066A69;
 }
 nav .nav-right {
   flex: 1;
@@ -52,7 +50,7 @@ nav .nav-right .profile p {
   margin-top: 5px;
 }
 nav .nav-right .profile span {
-  color: #16CD16;
+  color: #066A69;
 }
 nav .nav-right button {
   border-radius: 50%;
@@ -70,6 +68,14 @@ nav .nav-right button span {
   color: white;
 }
 
+.logo {
+  grid-row: 1/2;
+  grid-column: 1/3;
+  padding: 20px 40px;
+  color: #066A69;
+  background: #eeeeee;
+}
+
 ul,
 main,
 aside {
@@ -77,22 +83,47 @@ aside {
 }
 
 .menu {
-  grid-column: 1/2;
+  grid-column: 1/3;
   display: flex;
   flex-direction: column;
+  background-color: #eeeeee;
 }
-.menu li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px 0px;
+.menu a {
+  color: #373D46;
+  padding: 20px;
+  border-bottom: 1px solid #eeeeee;
   transition: 0.3s;
   cursor: pointer;
-  border-bottom: 1px solid #eeeeee;
 }
-.menu li span:nth-child(2) {
+.menu a li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.menu a li span:nth-child(2) {
   font-size: 17px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 3px;
+  background-color: #066A69;
+  color: white;
+  transition: 0.4s;
+}
+
+.after {
+  background: #FFCB44;
+  color: white;
+}
+
+.category-after {
+  background: #373D46;
+  color: white;
+  display: flex;
+  align-content: inherit;
+  gap: 5px;
 }
 
 main {
@@ -100,8 +131,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  grid-column: 2/10;
-  border-left: 1px solid #eeeeee;
+  grid-column: 3/10;
 }
 main .search-item {
   width: 95%;
@@ -112,13 +142,28 @@ main .search-item {
 }
 main .search-item .category button {
   color: #373D46;
-  background: transparent;
-  border: 1px solid #eeeeee;
   font-size: 17px;
+  background: #066A69;
+  color: white;
 }
 main .search-item .category button:hover {
-  background: #373D46;
-  color: white;
+  background: hsla(179, 89%, 22%, 0.9);
+}
+main .search-item #filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: black;
+  border: 1px solid #eeeeee;
+  padding: 0px 5px;
+}
+main .search-item #filter:active {
+  outline: 1px ridge rgba(132, 132, 132, 0.3);
+}
+main .search-item #filter select {
+  padding: 10px;
+  font-size: 17px;
 }
 main .search-item .search {
   position: relative;
@@ -126,12 +171,12 @@ main .search-item .search {
 main .search-item .search span {
   position: absolute;
   top: 20%;
-  left: 5px;
+  left: 7px;
   color: #373D46;
 }
 main .search-item .search input {
   width: 100px;
-  padding: 5px 0px 5px 30px;
+  padding: 7px 5px 7px 35px;
   border-radius: 50px;
   color: rgb(50, 50, 50);
   transition: width 0.4s ease-in-out;
@@ -139,9 +184,8 @@ main .search-item .search input {
   outline: 1px ridge rgba(132, 132, 132, 0.3);
 }
 main .search-item .search input:focus {
-  width: 300px;
-  padding: 5px 0px 5px 30px;
-  outline: 2px ridge rgba(132, 132, 132, 0.3);
+  width: 250px;
+  outline: 2px ridge rgba(132, 132, 132, 0.4);
 }
 main .search-item .search ::-moz-placeholder {
   color: rgb(132, 132, 132);
@@ -158,7 +202,6 @@ main .main-container {
   height: 100%;
   padding: 20px;
   border: 1px solid #eeeeee;
-  background-color: #eeeeee;
 }
 main .main-container .card {
   background-color: #fff;
@@ -170,6 +213,7 @@ main .main-container .card {
   padding: 10px;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 main .main-container .card .card-header {
   height: 65%;
@@ -215,14 +259,16 @@ aside .table-container table th {
 aside .table-container table tr {
   border-bottom: 1px solid #eeeeee;
 }
-aside .table-container table th, aside .table-container table td {
+aside .table-container table th,
+aside .table-container table td {
   padding: 20px;
   text-align: end;
 }
 aside .table-container table th:nth-child(1) {
   border-left: 1px solid #eeeeee;
 }
-aside .table-container table th:nth-child(1), aside .table-container table td:nth-child(1) {
+aside .table-container table th:nth-child(1),
+aside .table-container table td:nth-child(1) {
   text-align: start;
 }
 aside .show-ticket {
@@ -231,46 +277,90 @@ aside .show-ticket {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 5px;
 }
 aside .show-ticket .prices {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-aside .show-ticket .prices .subtotal, aside .show-ticket .prices .total {
+aside .show-ticket .prices .subtotal,
+aside .show-ticket .prices .total {
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
 }
-aside .show-ticket button {
-  font-size: 17px;
+aside .show-ticket a {
+  width: 100%;
 }
-aside .show-ticket button:hover {
-  background: hsl(120, 82%, 34%);
+aside .show-ticket a button {
+  width: 100%;
+  font-size: 18px;
+}
+aside .show-ticket a button:hover {
+  background: hsla(179, 89%, 22%, 0.9);
   color: white;
 }
 
 .form-container {
+  position: absolute;
   width: 100%;
   height: 100%;
-  display: none;
+  background: hsla(0, 0%, 0%, 0.4);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-button {
-  padding: 10px 25px;
-  font-size: 15px;
+.form-container form {
+  width: 35%;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  gap: 20px;
+}
+.form-container form .name,
+.form-container form .price,
+.form-container form .url,
+.form-container form .category {
+  flex: 1;
+}
+.form-container form label {
+  font-size: 18px;
+  cursor: pointer;
+}
+.form-container form input {
+  padding: 7px 10px;
+  width: 100%;
   border-radius: 3px;
-  background-color: #16CD16;
-  color: white;
-  transition: 0.4s;
+  font-size: 17px;
+  background: #eeeeee;
+  outline: 1px ridge rgba(132, 132, 132, 0.3);
 }
-
-.after {
-  background: #586271;
-  color: white;
+.form-container form input:focus {
+  outline: 2px ridge rgba(132, 132, 132, 0.3);
 }
-
-.category-after {
-  background: #373D46;
-  color: white;
+.form-container form .category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form-container form .category select {
+  padding: 10px;
+  width: 80%;
+  font-size: 17px;
+  background: #eeeeee;
+  outline: 1px ridge rgba(132, 132, 132, 0.3);
+  border-radius: 3px;
+}
+.form-container form .group-btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.form-container form .group-btn button {
+  width: 100px;
 }/*# sourceMappingURL=index.css.map */
