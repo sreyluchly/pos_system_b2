@@ -6,7 +6,7 @@
   list-style: none;
   text-decoration: none;
   border: none;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5rem;
 }
 
@@ -50,7 +50,7 @@ nav .nav-right .profile p {
   margin-top: 5px;
 }
 nav .nav-right .profile span {
-  color: #066A69;
+  color: #e4ae27;
 }
 nav .nav-right button {
   border-radius: 50%;
@@ -74,6 +74,7 @@ nav .nav-right button span {
   padding: 20px 40px;
   color: #066A69;
   background: #eeeeee;
+  text-shadow: rgba(6, 106, 104, 0.8274509804) 1px 0 1px;
 }
 
 ul,
@@ -114,7 +115,7 @@ button {
 }
 
 .after {
-  background: #FFCB44;
+  background: #e4ae27;
   color: white;
 }
 
@@ -132,6 +133,7 @@ main {
   align-items: center;
   flex-direction: column;
   grid-column: 3/10;
+  border-right: 1px solid #eeeeee;
 }
 main .search-item {
   width: 95%;
@@ -220,8 +222,8 @@ main .main-container .card .card-header {
   overflow: hidden;
   border-radius: 5px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 main .main-container .card .card-header img {
   width: 100%;
@@ -244,63 +246,42 @@ aside {
   grid-column: 10/13;
   display: flex;
   flex-direction: column;
-}
-aside .table-container {
-  flex: 3;
-  overflow-y: scroll;
-}
-aside .table-container table {
-  width: 100%;
-  border-collapse: collapse;
-}
-aside .table-container table th {
-  color: #373D46;
-}
-aside .table-container table tr {
-  border-bottom: 1px solid #eeeeee;
-}
-aside .table-container table th,
-aside .table-container table td {
   padding: 20px;
-  text-align: end;
+  gap: 20px;
 }
-aside .table-container table th:nth-child(1) {
-  border-left: 1px solid #eeeeee;
+aside h3 {
+  text-shadow: rgba(6, 106, 104, 0.8274509804) 1px 0 1px;
+  color: #066A69;
 }
-aside .table-container table th:nth-child(1),
-aside .table-container table td:nth-child(1) {
-  text-align: start;
-}
-aside .show-ticket {
+aside .pro-detail {
   flex: 1;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  border-radius: 5px;
-}
-aside .show-ticket .prices {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  justify-content: space-between;
 }
-aside .show-ticket .prices .subtotal,
-aside .show-ticket .prices .total {
+aside .pro-detail .img-detail {
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  height: 200px;
+}
+aside .pro-detail .img-detail img {
+  width: 100%;
+}
+aside .pro-detail .pro {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
+  flex: 1;
 }
-aside .show-ticket a {
-  width: 100%;
+aside .update {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
 }
-aside .show-ticket a button {
-  width: 100%;
-  font-size: 18px;
-}
-aside .show-ticket a button:hover {
-  background: hsla(179, 89%, 22%, 0.9);
-  color: white;
+aside .update button:nth-child(1) {
+  background: #e4ae27;
+  color: #373D46;
 }
 
 .form-container {
@@ -314,19 +295,23 @@ aside .show-ticket a button:hover {
   align-items: center;
 }
 .form-container form {
-  width: 35%;
+  width: 50%;
   padding: 30px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  gap: 20px;
+  gap: 40px;
+  animation: flot 0.5s;
 }
-.form-container form .name,
-.form-container form .price,
-.form-container form .url,
-.form-container form .category {
-  flex: 1;
+.form-container form h2 {
+  color: #066A69;
+  width: 100%;
+  display: flex;
+}
+.form-container form .header, .form-container form .price-qty {
+  display: flex;
+  gap: 20px;
 }
 .form-container form label {
   font-size: 18px;
@@ -361,6 +346,24 @@ aside .show-ticket a button:hover {
   justify-content: flex-end;
   gap: 20px;
 }
+.form-container form .group-btn button:nth-child(1) {
+  background: #e4ae27;
+  color: #373D46;
+}
 .form-container form .group-btn button {
   width: 100px;
+}
+
+@keyframes flot {
+  0% {
+    transform: translateY(10%);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=index.css.map */

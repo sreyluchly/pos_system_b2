@@ -31,7 +31,7 @@ nav .nav-right .profile p {
   margin-top: 5px;
 }
 nav .nav-right .profile span {
-  color: #066A69;
+  color: #e4ae27;
 }
 nav .nav-right button {
   border-radius: 50%;
@@ -57,7 +57,7 @@ nav .nav-right button span {
   list-style: none;
   text-decoration: none;
   border: none;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5rem;
 }
 
@@ -101,7 +101,7 @@ nav .nav-right .profile p {
   margin-top: 5px;
 }
 nav .nav-right .profile span {
-  color: #066A69;
+  color: #e4ae27;
 }
 nav .nav-right button {
   border-radius: 50%;
@@ -125,6 +125,7 @@ nav .nav-right button span {
   padding: 20px 40px;
   color: #066A69;
   background: #eeeeee;
+  text-shadow: rgba(6, 106, 104, 0.8274509804) 1px 0 1px;
 }
 
 ul,
@@ -165,7 +166,7 @@ button {
 }
 
 .after {
-  background: #FFCB44;
+  background: #e4ae27;
   color: white;
 }
 
@@ -187,7 +188,7 @@ button {
 }
 
 .after {
-  background: #FFCB44;
+  background: #e4ae27;
   color: white;
 }
 
