@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
   list-style: none;
   text-decoration: none;
   border: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.5rem;
 }
 
@@ -15,6 +16,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template: repeat(12, 1fr)/repeat(12, 1fr);
+  overflow-x: hidden;
 }
 
 nav {
@@ -74,7 +76,6 @@ nav .nav-right button span {
   padding: 20px 40px;
   color: #066A69;
   background: #eeeeee;
-  text-shadow: rgba(6, 106, 104, 0.8274509804) 1px 0 1px;
 }
 
 ul,
@@ -95,6 +96,7 @@ aside {
   border-bottom: 1px solid #eeeeee;
   transition: 0.3s;
   cursor: pointer;
+  border-radius: 5px;
 }
 .menu a li {
   display: flex;
@@ -112,6 +114,9 @@ button {
   background-color: #066A69;
   color: white;
   transition: 0.4s;
+}
+button:active {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .after {
@@ -177,7 +182,7 @@ main .search-item .search span {
   color: #373D46;
 }
 main .search-item .search input {
-  width: 100px;
+  width: 120px;
   padding: 7px 5px 7px 35px;
   border-radius: 50px;
   color: rgb(50, 50, 50);
@@ -189,12 +194,6 @@ main .search-item .search input:focus {
   width: 250px;
   outline: 2px ridge rgba(132, 132, 132, 0.4);
 }
-main .search-item .search ::-moz-placeholder {
-  color: rgb(132, 132, 132);
-}
-main .search-item .search ::placeholder {
-  color: rgb(132, 132, 132);
-}
 main .main-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -204,6 +203,7 @@ main .main-container {
   height: 100%;
   padding: 20px;
   border: 1px solid #eeeeee;
+  background: hsla(0, 0%, 93%, 0.5);
 }
 main .main-container .card {
   background-color: #fff;
@@ -250,8 +250,7 @@ aside {
   gap: 20px;
 }
 aside h3 {
-  text-shadow: rgba(6, 106, 104, 0.8274509804) 1px 0 1px;
-  color: #066A69;
+  color: #373D46;
 }
 aside .pro-detail {
   flex: 1;
@@ -264,24 +263,29 @@ aside .pro-detail .img-detail {
   border-radius: 3px;
   overflow: hidden;
   display: flex;
-  height: 200px;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
 }
 aside .pro-detail .img-detail img {
   width: 100%;
+}
+aside .pro-detail .total {
+  font-weight: 600;
 }
 aside .pro-detail .pro {
   display: flex;
   justify-content: space-between;
   flex: 1;
+  color: #373D46;
 }
 aside .update {
   display: flex;
-  justify-content: flex-end;
   gap: 20px;
 }
 aside .update button:nth-child(1) {
-  background: #e4ae27;
-  color: #373D46;
+  background: tomato;
+  color: white;
 }
 
 .form-container {
@@ -309,7 +313,8 @@ aside .update button:nth-child(1) {
   width: 100%;
   display: flex;
 }
-.form-container form .header, .form-container form .price-qty {
+.form-container form .header,
+.form-container form .price-qty {
   display: flex;
   gap: 20px;
 }
@@ -346,12 +351,15 @@ aside .update button:nth-child(1) {
   justify-content: flex-end;
   gap: 20px;
 }
-.form-container form .group-btn button:nth-child(1) {
-  background: #e4ae27;
-  color: #373D46;
-}
 .form-container form .group-btn button {
   width: 100px;
+}
+.form-container form .group-btn button:nth-child(1) {
+  background: tomato;
+  color: white;
+}
+.form-container form .group-btn button:nth-child(1):hover {
+  background: hsl(9, 93%, 60%);
 }
 
 @keyframes flot {

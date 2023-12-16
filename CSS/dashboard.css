@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
   list-style: none;
   text-decoration: none;
   border: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.5rem;
 }
 
@@ -15,6 +16,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template: repeat(12, 1fr)/repeat(12, 1fr);
+  overflow-x: hidden;
 }
 
 nav {
@@ -74,7 +76,6 @@ nav .nav-right button span {
   padding: 20px 40px;
   color: #066A69;
   background: #eeeeee;
-  text-shadow: rgba(6, 106, 104, 0.8274509804) 1px 0 1px;
 }
 
 ul,
@@ -95,6 +96,7 @@ aside {
   border-bottom: 1px solid #eeeeee;
   transition: 0.3s;
   cursor: pointer;
+  border-radius: 5px;
 }
 .menu a li {
   display: flex;
@@ -112,6 +114,9 @@ button {
   background-color: #066A69;
   color: white;
   transition: 0.4s;
+}
+button:active {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .after {
@@ -185,6 +190,9 @@ button {
   background-color: #066A69;
   color: white;
   transition: 0.4s;
+}
+button:active {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .after {

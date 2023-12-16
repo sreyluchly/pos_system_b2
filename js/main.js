@@ -5,15 +5,14 @@ const aside = document.querySelector('aside');
 const formAdd = document.querySelector('.form-container');
 const btnAdd = document.getElementById('btnAdd');
 const imgDetail = document.getElementById("imgDetail");
-let proId = 0;
 
 let arrayProduct = [
-    {id: 1, img: "IMG/image1.jpg", name: "Ash", quantity: 10, price: 10, category: "american"},
-    {id: 2, img: "IMG/image2.jpg", name: "Spaghetti", quantity: 15, price: 10, category: "italy"},
-    {id: 3, img: "IMG/image3.jpg", name: "Chinese Noodles", quantity: 20, price: 5, category: "other"},
-    {id: 4, img: "IMG/image4.jpg", name: "Sushi", quantity: 5, price: 100, category: "other"},
-    {id: 5, img: "IMG/image6.jpg", name: "Samon Fried", quantity: 15, price: 15, category: "american"},
-    {id: 6, img: "IMG/image9.jpg", name: "Khmer Noodles", quantity: 100, price: 5, category: "khmer"}
+    {id: 1, img: "IMG/image1.jpg", name: "Ash", quantity: 10, price: 10, category: "American"},
+    {id: 2, img: "IMG/image2.jpg", name: "Spaghetti", quantity: 15, price: 10, category: "Italy"},
+    {id: 3, img: "IMG/image3.jpg", name: "Chinese Noodles", quantity: 20, price: 5, category: "Other"},
+    {id: 4, img: "IMG/image4.jpg", name: "Sushi", quantity: 5, price: 100, category: "Other"},
+    {id: 5, img: "IMG/image6.jpg", name: "Samon Fried", quantity: 15, price: 15, category: "American"},
+    {id: 6, img: "IMG/image9.jpg", name: "Khmer Noodles", quantity: 100, price: 5, category: "Khmer"}
 ];
 let arrayDetail = [];
 // Show and hide Elements
@@ -21,7 +20,7 @@ function hide(element) {
     element.style.display = "none";
 }
 function show(element) {
-    element.style.display = "flex"
+    element.style.display = "flex";
 }
 
 function saveStorage() {
@@ -37,6 +36,7 @@ function deletPro(index) {
     arrayProduct.splice(index, 1);
     saveStorage();
     showProduct();
+
 }
 
 function addNewProduct() {
@@ -51,22 +51,29 @@ function addNewProduct() {
     arrayProduct.push(newProduct);
     saveStorage();
     showProduct();
-    productDetail();
     hide(formAdd);
 }
-function productDetail(event) {
-    proId = event != 0 ? event.target.parentElement.parentElement.dataset.index : 0;
+function productDetail(event = 0) {
+    let proId;
+    if (event == 0) {
+        proId = 0;
+    }else {
+        proId = event.target.parentElement.parentElement.dataset.index;
+    }
+    console.log(proId);
     imgDetail.src = arrayProduct[proId].img;
-    document.getElementById("proName").textContent = arrayProduct[proId].name;
-    document.getElementById("proCate").textContent = arrayProduct[proId].category;
-    document.getElementById("proPrice").textContent = arrayProduct[proId].price;
+    document.getElementById("proName").textContent = ": " + arrayProduct[proId].name;
+    document.getElementById("proCate").textContent = ": " + arrayProduct[proId].category;
+    document.getElementById("proQty").textContent = ": " + arrayProduct[proId].quantity;
+    document.getElementById("proPrice").textContent = ": " + arrayProduct[proId].price + "$";
+    document.getElementById("proTotal").textContent = ": " + arrayProduct[proId].price * arrayProduct[proId].quantity + "$";
     document.getElementById("delete").onclick = () => {
         if (window.confirm("Are you sure you want to delete this product?")) {
-            document.getElementById("delete").setAttribute("onclick", `${deletPro(proId)}`)
+            document.getElementById("delete").setAttribute("onclick", `${deletPro(proId)}`);
+            productDetail();
         }
     }
 }
-
 // Show Card
 function showProduct() {
     for (const card of document.querySelectorAll(".card")) {
