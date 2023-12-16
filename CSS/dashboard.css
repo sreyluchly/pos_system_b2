@@ -205,10 +205,11 @@ button {
 main {
   grid-column: 3/13;
   display: flex;
+  background: tomato;
 }
 
 .category {
-  width: 70%;
+  width: 100%;
   background: palevioletred;
   display: flex;
   flex-direction: column;
