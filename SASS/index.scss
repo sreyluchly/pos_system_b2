@@ -73,7 +73,7 @@ main {
 
     .main-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         overflow-y: scroll;
         width: 100%;
@@ -95,7 +95,7 @@ aside {
     gap: 20px;
 
     h3 {
-        color: $mainBg;
+        color: $mainBtnBg;
     }
 
     .pro-detail {
@@ -125,10 +125,12 @@ aside {
             color: $mainBg;
         }
     }
-
     .update {
         display: flex;
         gap: 20px;
+        button {
+            flex: 1;
+        }
 
         button:nth-child(1) {
             background: tomato;
@@ -146,13 +148,13 @@ aside {
     @include flexCenter;
 
     form {
-        width: 50%;
+        width: 40%;
         padding: 30px;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
         background-color: #fff;
-        gap: 40px;
+        gap: 20px;
         animation: flot 0.5s;
 
         h2 {
@@ -161,19 +163,14 @@ aside {
             display: flex;
         }
 
-        .header,
-        .price-qty {
-            display: flex;
-            gap: 20px;
-        }
-
         label {
-            font-size: 18px;
+            font-size: 17px;
             cursor: pointer;
+            font-weight: 300;
         }
 
         input {
-            padding: 7px 10px;
+            padding: 5px 10px;
             width: 100%;
             border-radius: 3px;
             font-size: 17px;
@@ -187,12 +184,11 @@ aside {
 
         .category {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            flex-direction: column;
 
             select {
-                padding: 10px;
-                width: 80%;
+                padding: 7px;
+                width: 50%;
                 font-size: 17px;
                 background: $mainBorderColor;
                 outline: 1px ridge rgb(132, 132, 132, .3);
@@ -202,7 +198,6 @@ aside {
 
         .group-btn {
             display: flex;
-            justify-content: flex-end;
             gap: 20px;
 
             button {

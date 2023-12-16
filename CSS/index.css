@@ -96,7 +96,7 @@ aside {
   border-bottom: 1px solid #eeeeee;
   transition: 0.3s;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0px 15px 15px 0px;
 }
 .menu a li {
   display: flex;
@@ -114,9 +114,6 @@ button {
   background-color: #066A69;
   color: white;
   transition: 0.4s;
-}
-button:active {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .after {
@@ -196,7 +193,7 @@ main .search-item .search input:focus {
 }
 main .main-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   overflow-y: scroll;
   width: 100%;
@@ -250,7 +247,7 @@ aside {
   gap: 20px;
 }
 aside h3 {
-  color: #373D46;
+  color: #066A69;
 }
 aside .pro-detail {
   flex: 1;
@@ -283,6 +280,9 @@ aside .update {
   display: flex;
   gap: 20px;
 }
+aside .update button {
+  flex: 1;
+}
 aside .update button:nth-child(1) {
   background: tomato;
   color: white;
@@ -299,13 +299,13 @@ aside .update button:nth-child(1) {
   align-items: center;
 }
 .form-container form {
-  width: 50%;
+  width: 40%;
   padding: 30px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  gap: 40px;
+  gap: 20px;
   animation: flot 0.5s;
 }
 .form-container form h2 {
@@ -313,17 +313,13 @@ aside .update button:nth-child(1) {
   width: 100%;
   display: flex;
 }
-.form-container form .header,
-.form-container form .price-qty {
-  display: flex;
-  gap: 20px;
-}
 .form-container form label {
-  font-size: 18px;
+  font-size: 17px;
   cursor: pointer;
+  font-weight: 300;
 }
 .form-container form input {
-  padding: 7px 10px;
+  padding: 5px 10px;
   width: 100%;
   border-radius: 3px;
   font-size: 17px;
@@ -335,12 +331,11 @@ aside .update button:nth-child(1) {
 }
 .form-container form .category {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
 }
 .form-container form .category select {
-  padding: 10px;
-  width: 80%;
+  padding: 7px;
+  width: 50%;
   font-size: 17px;
   background: #eeeeee;
   outline: 1px ridge rgba(132, 132, 132, 0.3);
@@ -348,7 +343,6 @@ aside .update button:nth-child(1) {
 }
 .form-container form .group-btn {
   display: flex;
-  justify-content: flex-end;
   gap: 20px;
 }
 .form-container form .group-btn button {

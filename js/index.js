@@ -3,8 +3,13 @@ const tbody = document.querySelector('tbody');
 const main = document.querySelector('main');
 const aside = document.querySelector('aside');
 const formAdd = document.querySelector('.form-container');
-const btnAdd = document.getElementById('btnAdd');
 const imgDetail = document.getElementById("imgDetail");
+const allCate = document.getElementById('allCate');
+const add = document.getElementById("add");
+const inputSearch = document.getElementById('search');
+const inputsInForm = document.querySelectorAll('form input');
+
+let proId;
 
 let arrayProduct = [
     {id: 1, img: "IMG/image1.jpg", name: "Ash", quantity: 10, price: 10, category: "American"},
@@ -27,19 +32,13 @@ function saveStorage() {
     localStorage.setItem("arrayProduct", JSON.stringify(arrayProduct));
 }
 function loadStorage() {
-    if (localStorage.getItem("arrayProduct") != null) {
+    if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
     }
 }
 
-function deletPro(index) {
-    arrayProduct.splice(index, 1);
-    saveStorage();
-    showProduct();
-
-}
-
 function addNewProduct() {
+    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
     let newProduct = {
         id : arrayProduct[arrayProduct.length - 1].id + 1 ,
         img: `${document.getElementById('urlPro').value}`,
@@ -53,14 +52,31 @@ function addNewProduct() {
     showProduct();
     hide(formAdd);
 }
+function deletPro(index) {
+    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    arrayProduct.splice(index, 1);
+    saveStorage();
+    showProduct();
+}
+
+// Edit product
+function editProduct() {
+    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    arrayProduct[proId].img = document.getElementById("urlPro").value;
+    arrayProduct[proId].name = document.getElementById("namePro").value;
+    arrayProduct[proId].price = document.getElementById("pricePro").value;
+    saveStorage();
+    showProduct();
+    productDetail();
+    hide(formAdd);
+}
+
 function productDetail(event = 0) {
-    let proId;
     if (event == 0) {
         proId = 0;
     }else {
         proId = event.target.parentElement.parentElement.dataset.index;
     }
-    console.log(proId);
     imgDetail.src = arrayProduct[proId].img;
     document.getElementById("proName").textContent = ": " + arrayProduct[proId].name;
     document.getElementById("proCate").textContent = ": " + arrayProduct[proId].category;
@@ -110,30 +126,62 @@ function showProduct() {
     }
 }
 
-// Add to Cart
-btnAdd.onclick = () => {
-    show(formAdd);
+// // Button Dark and Light mode
+// const btnTheme = document.querySelector(".nav-right button");
+// const themeMode = document.querySelector('.dark');
+// btnTheme.onclick = () => {
+//     themeMode.classList.toggle('dark');
+//     if (themeMode.className.includes("dark")) {
+//         document.body.style.background = "#373D46";
+//         themeMode.textContent = "light_mode";
+//     }else {
+//         document.body.style.background = "white";
+//         themeMode.textContent = "dark_mode";
+//     }
+// }
+
+// Filter product
+allCate.onclick = (event) => {
+    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    if (event.target.value != "All") {
+        arrayProduct = arrayProduct.filter((product) => product.category == event.target.value);
+    }
+    showProduct();
 }
 
+// Search products
+inputSearch.oninput = (event) => {
+    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    arrayProduct = arrayProduct.filter((product) => product.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    showProduct();
+}
+
+// Show form
+
+
+// Edit product
+function editPro() {
+    show(formAdd);
+    add.setAttribute("onclick", "editProduct()");
+    document.getElementById("urlPro").value = arrayProduct[proId].img;
+    document.getElementById("namePro").value = arrayProduct[proId].name;
+    document.getElementById("pricePro").value = arrayProduct[proId].price;
+    add.textContent = "Edit";
+}
+function newPro() {
+    show(formAdd);
+    add.setAttribute("onclick", "addNewProduct()");
+    add.textContent = "Add";
+}
+
+// Hide form
 function cancel() {
     hide(formAdd);
 }
 
-// Button Dark and Light mode
-const btnTheme = document.querySelector(".nav-right button");
-const themeMode = document.querySelector('.dark');
-btnTheme.onclick = () => {
-    themeMode.classList.toggle('dark');
-    if (themeMode.className.includes("dark")) {
-        document.body.style.background = "#373D46";
-        themeMode.textContent = "light_mode";
-    }else {
-        document.body.style.background = "white";
-        themeMode.textContent = "dark_mode";
-    }
-}
-
+// Invoke Function
 loadStorage();
-showProduct();
 productDetail();
+saveStorage();
+showProduct();
 // localStorage.clear();

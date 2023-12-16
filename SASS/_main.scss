@@ -47,8 +47,8 @@ aside {
         border-bottom: 1px solid $mainBorderColor;
         transition: 0.3s;
         cursor: pointer;
-        border-radius: 5px;
-        li {
+        border-radius: 0px 15px 15px 0px;
+        li { 
             display: flex;
             align-items: center;
             gap: 7px;
