@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <div class="logo">
+        <h2>POS System</h2>
+    </div>
+
     <nav>
         <div class="nav-left">
             <h1>
@@ -48,15 +52,10 @@
         </a>
     </ul>
 
-    <div class="logo">
-        <h2>POS System</h2>
-    </div>
-
-    <!--  -->
     <main>
         <div class="search-item">
             <div class="category">
-                <button class="category-after" id="btnAdd">
+                <button class="category-after" onclick="newPro()">
                     <span class="material-symbols-outlined">
                         add
                     </span>
@@ -65,16 +64,13 @@
             </div>
 
             <button id="filter">
-                <span class="material-symbols-outlined">
-                    filter_list
-                </span>
-                <select id="">
-                    <option value="">All Category</option>
-                    <option value="khmer food">Khmer Food</option>
-                    <option value="american food">American Food</option>
-                    <option value="italy food">Italy Food</option>
-                    <option value="sea food">Sea food</option>
-                    <option value="other">Other</option>
+                <span class="material-symbols-outlined">filter_list</span>
+                <select id="allCate" value="">
+                    <option value="All">All Category</option>
+                    <option value="Khmer">Khmer Food</option>
+                    <option value="American">American Food</option>
+                    <option value="Italy">Italy Food</option>
+                    <option value="Other">Other</option>
                 </select>
             </button>
 
@@ -104,18 +100,22 @@
                 <span style="font-weight: bold; flex: 3;">Category</span>
                 <span style="flex: 3;" id="proCate"></span>
             </div>
+            <div class="pro qty">
+                <span style="font-weight: bold; flex: 3;">Quantity</span>
+                <span style="flex: 3;" id="proQty"></span>
+            </div>
             <div class="pro price">
                 <span style="font-weight: bold; flex: 3;">Price</span>
                 <span style="flex: 3;" id="proPrice"></span>
             </div>
-            <!-- <div class="pro total-price">
+            <div class="pro total">
                 <span style="font-weight: bold; flex: 3;">Total Price</span>
-                <span style="flex: 2;" >: 15.00$</span>
-            </div> -->
+                <span style="flex: 3;" id="proTotal"></span>
+            </div>
         </div>
         <div class="update">
             <button id="delete">Delete</button>
-            <button id="update">Update</button>
+            <button id="edit" onclick="editPro()">Edit</button>
         </div>
 
     </aside>
@@ -123,45 +123,41 @@
     <div class="form-container" style="display: none;">
         <form>
             <h2>Add Products</h2>
-            <div class="header">
-                <div class="name">
-                    <label for="namePro">Product Name:</label>
-                    <input type="text" id="namePro" placeholder="Enter Prodcut name*" required>
-                </div>
-                <div class="image">
-                    <label for="url">Product Iamgae:</label>
-                    <input type="url" step=".01" min="0" id="urlPro" placeholder="Enter Image URL*" required>
-                </div>
+            <div class="pro name">
+                <label for="namePro">Product Name:</label>
+                <input type="text" id="namePro" placeholder="Enter Prodcut name*">
+            </div>
+            <div class="pro image">
+                <label for="urlPro">Product Image:</label>
+                <input type="url" id="urlPro" placeholder="Enter Image URL*">
             </div>
 
-            <div class="price-qty">
-                <div class="price">
-                    <label for="pricePro">Product Price*</label>
-                    <input type="number" id="pricePro" value="1" min="0">
-                </div>
-                <div class="qty">
-                    <label for="url">Product Quantity*</label>
-                    <input type="number" id="qtyPro" value="1" min="0">
-                </div>
+            <div class="pro price">
+                <label for="pricePro">Product Price*</label>
+                <input type="number" id="pricePro" value="1" min="0">
+            </div>
+            <div class="pro qty">
+                <label for="qtyPro">Product Quantity*</label>
+                <input type="number" id="qtyPro" value="1" min="0">
             </div>
 
-            <div class="category">
-                <label for="">Category*:</label>
-                <select id="cate">
-                    <option value="khmer">Khmer Food</option>
-                    <option value="american">American Food</option>
-                    <option value="italy">Italy Food</option>
-                    <option value="other">Other</option>
+            <div class="pro category">
+                <label>Category*:</label>
+                <select id="cate" value="">
+                    <option value="American">American Food</option>
+                    <option value="Khmer">Khmer Food</option>
+                    <option value="Italy">Italy Food</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
-            <div class="group-btn">
+            <div class="pro group-btn">
                 <button type="button" onclick="cancel()">Cancel</button>
-                <button type="button" onclick="addNewProduct()">Add</button>
+                <button type="button" id="add">Add</button>
             </div>
         </form>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
