@@ -247,129 +247,90 @@ aside {
   grid-column: 10/13;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  gap: 20px;
-}
-aside h3 {
-  color: #066A69;
-}
-aside .pro-detail {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   justify-content: space-between;
-}
-aside .pro-detail .img-detail {
-  border-radius: 3px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 170px;
-}
-aside .pro-detail .img-detail img {
-  width: 100%;
-}
-aside .pro-detail .total {
-  font-weight: 600;
-}
-aside .pro-detail .pro {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
-  color: #373D46;
-}
-aside .update {
-  display: flex;
-  gap: 20px;
-}
-aside .update button {
-  flex: 1;
-}
-aside .update button:nth-child(1) {
-  background: tomato;
-  color: white;
-}
-
-.form-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: hsla(0, 0%, 0%, 0.4);
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.form-container form {
-  width: 40%;
-  padding: 30px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   background-color: #fff;
-  gap: 20px;
-  animation: flot 0.5s;
 }
-.form-container form h2 {
-  color: #066A69;
+aside .table-container {
+  flex: 3;
+  overflow-y: scroll;
+}
+aside .table-container table {
   width: 100%;
-  display: flex;
+  border-collapse: collapse;
 }
-.form-container form label {
-  font-size: 17px;
+aside .table-container table thead tr th {
+  padding: 20px 5px;
+}
+aside .table-container table tr {
+  border-bottom: 1px solid #eeeeee;
+  font-size: 15px;
+}
+aside .table-container table th, aside .table-container table td {
+  padding: 10px;
+  text-align: end;
+}
+aside .table-container table td {
+  color: #7e7e7e;
+}
+aside .table-container table td input {
+  width: 40px;
+  border: 1px solid #eeeeee;
+  text-align: center;
+}
+aside .table-container table th {
+  font-weight: 500;
+  color: #373D46;
+  padding: 12px;
+}
+aside .table-container table th:nth-child(1), aside .table-container table td:nth-child(1) {
+  text-align: start;
+}
+aside .table-container table th:nth-child(4) {
+  color: tomato;
+}
+aside .table-container table span {
+  background-color: tomato;
+  border-radius: 50%;
+  color: white;
   cursor: pointer;
-  font-weight: 300;
 }
-.form-container form input {
-  padding: 5px 10px;
-  width: 100%;
-  border-radius: 3px;
-  font-size: 17px;
-  background: #eeeeee;
-  outline: 1px ridge rgba(132, 132, 132, 0.3);
-}
-.form-container form input:focus {
-  outline: 2px ridge rgba(132, 132, 132, 0.3);
-}
-.form-container form .category {
+aside .checkout {
+  padding: 20px;
   display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex: 1;
+  gap: 40px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+aside .checkout .total-price {
+  display: flex;
+  gap: 15px;
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
-.form-container form .category select {
-  padding: 7px;
-  width: 50%;
-  font-size: 17px;
-  background: #eeeeee;
-  outline: 1px ridge rgba(132, 132, 132, 0.3);
-  border-radius: 3px;
-}
-.form-container form .group-btn {
+aside .checkout .total-price .total {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 15px;
 }
-.form-container form .group-btn button {
-  width: 100px;
+aside .checkout .total-price span {
+  font-size: 18px;
 }
-.form-container form .group-btn button:nth-child(1) {
-  background: tomato;
-  color: white;
+aside .checkout .confirm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.form-container form .group-btn button:nth-child(1):hover {
-  background: hsl(9, 93%, 60%);
-}
-
-@keyframes flot {
-  0% {
-    transform: translateY(10%);
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}/*# sourceMappingURL=index.css.map */
+aside .checkout .confirm button:nth-child(1) {
+  background: transparent;
+  border: 1px solid #373D46;
+  color: #373D46;
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=order.css.map */
