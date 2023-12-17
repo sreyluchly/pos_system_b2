@@ -259,7 +259,7 @@ aside .table-container table {
   border-collapse: collapse;
 }
 aside .table-container table thead tr th {
-  padding: 20px 5px;
+  padding: 20px 10px;
 }
 aside .table-container table tr {
   border-bottom: 1px solid #eeeeee;
@@ -276,11 +276,6 @@ aside .table-container table td input {
   width: 40px;
   border: 1px solid #eeeeee;
   text-align: center;
-}
-aside .table-container table th {
-  font-weight: 500;
-  color: #373D46;
-  padding: 12px;
 }
 aside .table-container table th:nth-child(1), aside .table-container table td:nth-child(1) {
   text-align: start;

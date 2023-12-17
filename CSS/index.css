@@ -249,9 +249,11 @@ aside {
   flex-direction: column;
   padding: 20px;
   gap: 20px;
+  background: #373D46;
 }
 aside h3 {
-  color: #066A69;
+  color: white;
+  font-weight: 500;
 }
 aside .pro-detail {
   flex: 1;
@@ -278,7 +280,7 @@ aside .pro-detail .pro {
   display: flex;
   justify-content: space-between;
   flex: 1;
-  color: #373D46;
+  color: white;
 }
 aside .update {
   display: flex;

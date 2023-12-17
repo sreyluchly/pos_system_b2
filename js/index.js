@@ -36,7 +36,6 @@ function loadStorage() {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
     }
 }
-
 function addNewProduct() {
     arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
     let newProduct = {
@@ -83,7 +82,7 @@ function productDetail(event = 0) {
     document.getElementById("proCate").textContent = ":  " + arrayProduct[proId].category;
     document.getElementById("proQty").textContent = ":  " + arrayProduct[proId].quantity;
     document.getElementById("proPrice").textContent = ":  " + arrayProduct[proId].price + "$";
-    document.getElementById("proTotal").textContent = ":  " + arrayProduct[proId].price * arrayProduct[proId].quantity + "$";
+    document.getElementById("proTotal").textContent = ":  " + (arrayProduct[proId].price * arrayProduct[proId].quantity).toFixed(2) + "$";
     document.getElementById("delete").onclick = () => {
         if (window.confirm("Are you sure you want to delete this product?")) {
             document.getElementById("delete").setAttribute("onclick", `${deletPro(proId)}`);
@@ -127,20 +126,6 @@ function showProduct() {
     }
 }
 
-// // Button Dark and Light mode
-// const btnTheme = document.querySelector(".nav-right button");
-// const themeMode = document.querySelector('.dark');
-// btnTheme.onclick = () => {
-//     themeMode.classList.toggle('dark');
-//     if (themeMode.className.includes("dark")) {
-//         document.body.style.background = "#373D46";
-//         themeMode.textContent = "light_mode";
-//     }else {
-//         document.body.style.background = "white";
-//         themeMode.textContent = "dark_mode";
-//     }
-// }
-
 // Filter product
 allCate.onclick = (event) => {
     arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
@@ -180,10 +165,9 @@ function newPro() {
 function cancel() {
     hide(formAdd);
 }
-
+saveStorage();
 // Invoke Function
 loadStorage();
 productDetail();
-saveStorage();
 showProduct();
 // localStorage.clear();

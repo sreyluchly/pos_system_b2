@@ -98,7 +98,7 @@ aside {
             width: 100%;
             border-collapse: collapse;
             thead tr th {
-                padding: 20px 5px;
+                padding: 20px 10px;
             }
             tr {
                 border-bottom: 1px solid $mainBorderColor;
@@ -115,11 +115,6 @@ aside {
                     border: 1px solid $mainBorderColor;
                     text-align: center;
                 }
-            }
-            th {
-                font-weight: 500;
-                color: $mainBg;
-                padding: 12px;
             }
             th:nth-child(1), td:nth-child(1) {
                 text-align: start;

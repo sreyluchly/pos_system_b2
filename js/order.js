@@ -53,15 +53,15 @@ function checkout(event) {
     // event.preventDefault();
     proId = event.target.closest(".card").dataset.index;
     let product = {
-      name: arrayProduct[proId].name,
-      quantity: 1,
-      price: arrayProduct[proId].price,
+        id: proId,
+        name: arrayProduct[proId].name,
+        quantity: 1,
+        price: arrayProduct[proId].price,
     };
     arrayProduct[proId].quantity -= 1;
     for (const pro of proCheckout) {
       if (pro.name == product.name) {
-        pro.quantity += 1;
-        console.log(pro.quantity);
+        pro.quantity = parseInt(pro.quantity) + 1;
         saveStorage();
         displayProCheckout();
         return;
@@ -73,6 +73,7 @@ function checkout(event) {
 }
 
 function displayProCheckout() {
+    let total = 0;
     for (const tr of document.querySelectorAll("tbody tr")) {
         tr.remove();
     }
@@ -85,21 +86,21 @@ function displayProCheckout() {
         let removeOrder = document.createElement("span");
         let qty = document.createElement("input");
         
-        removeOrder.className = "material-symbols-outlined";
+        removeOrder.className = "material-symbols-outlined remove";
         removeOrder.textContent = "close";
-        removeOrder.onclick = () => {
-            arrayProduct[proId].quantity += proCheckout[i].quantity;
-            proCheckout.splice(i, 1);
-            saveStorage();
-            displayProCheckout();
-        };
+        removeOrder.dataset.id = proCheckout[i].id;
+        
         qty.setAttribute("type", "number");
         qty.setAttribute("min", "1");
         qty.value = proCheckout[i].quantity;
-      
+        qty.dataset.id = proCheckout[i].id;
+        
+        
         tdName.textContent = proCheckout[i].name;
-        tdPrice.textContent = proCheckout[i].price;
-      
+        tdPrice.textContent = `${proCheckout[i].price}$`;
+        
+        total += proCheckout[i].price * proCheckout[i].quantity;
+        
         tdQty.appendChild(qty);
         tdAction.appendChild(removeOrder);
         tr.appendChild(tdName);
@@ -107,9 +108,26 @@ function displayProCheckout() {
         tr.appendChild(tdPrice);
         tr.appendChild(tdAction);
         tbody.appendChild(tr);
+        
+        
+        // Remove product checkout
+        removeOrder.onclick = (event) => {
+            arrayProduct[event.target.dataset.id].quantity += parseInt(proCheckout[i].quantity);
+            proCheckout.splice(i, 1);
+            saveStorage();
+            displayProCheckout();
+        };
+        // Change quantity of product checkoout
+        qty.onchange = (event) => {
+            arrayProduct[proCheckout[i].id].quantity += proCheckout[i].quantity - event.target.value;
+            proCheckout[i].quantity = event.target.value;
+            saveStorage();
+            displayProCheckout();
+        };
     }
+    document.getElementById('subTotal').textContent = total.toFixed(2) +"$";
+    document.getElementById('total').textContent = Math.round(total).toFixed(2) +"$";
 }
-
 loadStorage();
 showProduct();
 displayProCheckout();
