@@ -200,4 +200,65 @@ button {
   display: flex;
   align-content: inherit;
   gap: 5px;
+}
+
+main {
+  grid-column: 3/13;
+  display: flex;
+}
+
+.category {
+  width: 70%;
+  background: palevioletred;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.category .total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.category .total .total-pay {
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  gap: 20px;
+  border-radius: 3px;
+}
+.category .total .total-pay:hover {
+  background: hsla(0, 0%, 100%, 0.666);
+}
+.category .total .total-pay .new-order {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products {
+  width: 30%;
+  background-color: crimson;
+  display: flex;
+  justify-content: center;
+}
+
+.orders-list {
+  padding: 15px;
+}
+.orders-list table {
+  padding: 40px;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+.orders-list table tr,
+.orders-list table th,
+.orders-list table td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 20px;
+}
+.orders-list table th {
+  background: #066A69;
 }/*# sourceMappingURL=dashboard.css.map */
