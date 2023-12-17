@@ -3,3 +3,123 @@
 
 
 @import "component/button";
+
+
+main {
+    grid-column: 3/13;
+    display: flex;
+    // background: tomato;
+
+    .category {
+        width: 100%;
+        // background: palevioletred;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+        .total {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            .total-pay {
+                padding: 10px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                background-color: #fff;
+                gap: 20px;
+                border-radius: 3px;
+
+                &:hover {
+                    background: hsla(0, 0%, 100%, 0.666);
+                }
+
+                .new-order {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        .orders-list {
+            padding-top: 40px;
+            width: 100%;
+
+            table {
+                width: 100%;
+                padding: 40px;
+                border: 1px solid #000;
+                border-collapse: collapse;
+
+                tr,
+                th,
+                td {
+                    border: 1px solid #000;
+                    border-collapse: collapse;
+                    padding: 20px;
+                }
+
+                th {
+                    background: $mainBtnBg;
+                }
+            }
+
+        }
+    }
+
+
+}
+
+.top-product {
+    // background: orangered;
+    padding-top: 35px;
+    gap: 20px;
+
+    .top {
+        // background: blueviolet;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-bottom: 35px;
+        .btn {
+            padding: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            gap: 20px;
+            border-radius: 3px;
+
+            &:hover {
+                background: hsla(0, 0%, 100%, 0.666);
+            }
+
+        }
+
+
+
+    }
+}
+
+.table {
+    width: 100%;
+    // background: blue;
+    padding: 40px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+  
+    tr,
+    th,
+    td {
+        border: 1px solid #000;
+        border-collapse: collapse;
+        padding: 20px;
+    }
+
+    th {
+        background: $mainBtnBg;
+    }
+}
