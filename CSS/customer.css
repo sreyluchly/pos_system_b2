@@ -147,7 +147,7 @@ aside {
   border-bottom: 1px solid #eeeeee;
   transition: 0.3s;
   cursor: pointer;
-  border-radius: 0px 15px 15px 0px;
+  border-radius: 0px 20px 20px 0px;
 }
 .menu a li {
   display: flex;

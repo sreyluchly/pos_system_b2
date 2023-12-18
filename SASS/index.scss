@@ -93,9 +93,11 @@ aside {
     flex-direction: column;
     padding: 20px;
     gap: 20px;
+    background: $mainBg;
 
     h3 {
-        color: $mainBtnBg;
+        color: white;
+        font-weight: 500;
     }
 
     .pro-detail {
@@ -122,7 +124,7 @@ aside {
             display: flex;
             justify-content: space-between;
             flex: 1;
-            color: $mainBg;
+            color: white;
         }
     }
     .update {
