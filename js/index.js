@@ -165,9 +165,9 @@ function newPro() {
 function cancel() {
     hide(formAdd);
 }
-saveStorage();
 // Invoke Function
 loadStorage();
 productDetail();
+saveStorage();
 showProduct();
 // localStorage.clear();

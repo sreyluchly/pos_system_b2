@@ -45,7 +45,13 @@ function showProduct() {
         card.appendChild(cardFooter);
 
         mainContainer.appendChild(card);
-        card.addEventListener("click", checkout);
+        card.onclick = (event) => {
+            if (arrayProduct[i].quantity > 0) {
+                checkout(event)
+            }else {
+                alert("Out of stock");
+            }
+        };
     }   
 }
 
@@ -95,7 +101,6 @@ function displayProCheckout() {
         qty.value = proCheckout[i].quantity;
         qty.dataset.id = proCheckout[i].id;
         
-        
         tdName.textContent = proCheckout[i].name;
         tdPrice.textContent = `${proCheckout[i].price}$`;
         
@@ -128,6 +133,15 @@ function displayProCheckout() {
     document.getElementById('subTotal').textContent = total.toFixed(2) +"$";
     document.getElementById('total').textContent = Math.round(total).toFixed(2) +"$";
 }
+
+function printCart() {
+    // document.querySelector('ul').style.display = "none";
+    // document.querySelector('main').style.display = "none";
+    // document.querySelector('nav').style.display = "none";
+    // document.querySelector('.logo').style.display = "none";
+    window.print();
+}
+
 loadStorage();
 showProduct();
 displayProCheckout();
