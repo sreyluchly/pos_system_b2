@@ -55,6 +55,67 @@
             </li>
         </a>
     </ul>
+    <main>
+        <div class="container-category">
+            <h1>Choose Category</h1>
+            <div class="container-div">
+                <div>Khmer Food</div>
+                <div>American Food</div>
+                <div>Italy Food</div>
+                <div>Other</div>
+            </div>
+        </div>
+        <button id="addCate">
+            Add Category
+            <span class="material-symbols-outlined">
+                add
+            </span>
+        </button>
+        <div class="container-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category ID</th>
+                        <th>Category Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>Khmer Food</td>
+                        <td>
+                            <div class="container-span">
+                                <span class="material-symbols-outlined edit">
+                                    edit
+                                </span>
+                                <span class="material-symbols-outlined del">
+                                    delete
+                                </span>
+                            </div>
+                        </td>
+                    </tr> -->
+                </tbody 
+            </table>
+        </div>
+    </main>
+    <div class="container-form">
+        <div class="container-input">
+            <div class="container-inputname">
+                <label>Product Name*</label>
+                <input class="input-name" type="text" placeholder="Product Name*" required />
+            </div>
+            <div class="container-decription">
+                <label>Decription*</label>
+                <textarea placeholder=" Decription*"></textarea>
+            </div>
+            <div class="container-button">
+                <button class="add">Add</button>                
+                <button class="cancel">Cancel</button>                
+            </div>
+        </div>
+    </div>
 
+    <script src="../js/category.js"></script>
 </body>
 </html>
