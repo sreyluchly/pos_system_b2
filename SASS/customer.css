@@ -1,4 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+nav {
+  grid-column: 3/19;
+  padding: 5px 40px;
+  display: flex;
+  justify-content: space-between;
+  background: #373D46;
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  z-index: 100;
+}
+nav .nav-left {
+  flex: 6;
+  color: #066A69;
+}
+nav .nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+nav .nav-right span {
+  cursor: pointer;
+  color: #373D46;
+}
+nav .nav-right .profile {
+  display: flex;
+  color: white;
+}
+nav .nav-right .profile p {
+  margin-top: 5px;
+}
+nav .nav-right .profile span {
+  color: #e4ae27;
+}
+nav .nav-right button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+nav .nav-right button:active {
+  background: rgba(201, 201, 201, 0.2392156863);
+}
+nav .nav-right button span {
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +57,7 @@
   list-style: none;
   text-decoration: none;
   border: none;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5rem;
 }
 
@@ -16,7 +66,6 @@ body {
   height: 100vh;
   display: grid;
   grid-template: repeat(12, 1fr)/repeat(12, 1fr);
-  overflow-x: hidden;
 }
 
 nav {
@@ -76,6 +125,7 @@ nav .nav-right button span {
   padding: 20px 40px;
   color: #066A69;
   background: #eeeeee;
+  text-shadow: rgba(6, 106, 104, 0.8274509804) 1px 0 1px;
 }
 
 ul,
@@ -96,7 +146,6 @@ aside {
   border-bottom: 1px solid #eeeeee;
   transition: 0.3s;
   cursor: pointer;
-  border-radius: 0px 20px 20px 0px;
 }
 .menu a li {
   display: flex;
@@ -129,57 +178,6 @@ button {
   gap: 5px;
 }
 
-nav {
-  grid-column: 3/19;
-  padding: 5px 40px;
-  display: flex;
-  justify-content: space-between;
-  background: #373D46;
-  border-left: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-  z-index: 100;
-}
-nav .nav-left {
-  flex: 6;
-  color: #066A69;
-}
-nav .nav-right {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  align-items: center;
-}
-nav .nav-right span {
-  cursor: pointer;
-  color: #373D46;
-}
-nav .nav-right .profile {
-  display: flex;
-  color: white;
-}
-nav .nav-right .profile p {
-  margin-top: 5px;
-}
-nav .nav-right .profile span {
-  color: #e4ae27;
-}
-nav .nav-right button {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-}
-nav .nav-right button:active {
-  background: rgba(201, 201, 201, 0.2392156863);
-}
-nav .nav-right button span {
-  color: white;
-}
-
 button {
   padding: 10px 20px;
   font-size: 15px;
@@ -200,58 +198,4 @@ button {
   display: flex;
   align-content: inherit;
   gap: 5px;
-}
-
-main {
-  grid-column: 3/13;
-  display: flex;
-}
-main .category {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
-}
-main .category .total {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-main .category .total .total-pay {
-  padding: 10px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(235, 235, 227, 0.329);
-  background-color: #fff;
-  gap: 20px;
-  border-radius: 3px;
-  transition: 0.3s;
-}
-main .category .total .total-pay:hover {
-  background: rgba(235, 235, 227, 0.308);
-}
-main .category .total .total-pay .new-order {
-  display: flex;
-  justify-content: space-between;
-}
-main .category .orders-list {
-  width: 100%;
-}
-main .category .orders-list table {
-  width: 100%;
-  padding: 15px;
-}
-main .category .orders-list table tr,
-main .category .orders-list table th,
-main .category .orders-list table td {
-  border: 1px solid #eeeeee;
-  border-collapse: collapse;
-  background: #eeeeee;
-  padding: 20px;
-  text-align: center;
-}
-main .category .orders-list table th {
-  background: #066A69;
-  color: #eeeeee;
-}/*# sourceMappingURL=dashboard.css.map */
+}/*# sourceMappingURL=customer.css.map */
