@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../CSS/category.css">
-    <title>Category</title>
+    <link rel="stylesheet" href="/CSS/customer.css">
 </head>
 
 <body>
@@ -18,7 +18,9 @@
 
     <nav>
         <div class="nav-left">
-            <h1></h1>
+            <h1>
+                <!--  -->
+            </h1>
         </div>
         <div class="nav-right">
             <!-- <span class="material-symbols-outlined">menu</span> -->
@@ -30,7 +32,6 @@
             </button>
         </div>
     </nav>
-
     <ul class="menu">
         <a href="/PAGES/dashborad.html">
             <li>
@@ -50,13 +51,13 @@
                 <span>Order</span>
             </li>
         </a>
-        <a href="#" class="after">
+        <a href="/PAGES/category.html">
             <li>
-                <span class="material-symbols-outlined">groups</span>
+                <span class="material-symbols-outlined">category</span>
                 <span>Category</span>
             </li>
         </a>
-        <a href="/PAGES/customer.html">
+        <a href="#" class="after">
             <li>
                 <span class="material-symbols-outlined">Groups</span>
                 <span>Customers</span>
@@ -64,6 +65,25 @@
         </a>
     </ul>
 
+    <main>
+        <section class="content">
+            <h2>Customer Groups</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customers Name</th>
+                        <th>Email</th>
+                        <th>Quantity</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="/js/customer.js"></script>
 </body>
 
 </html>

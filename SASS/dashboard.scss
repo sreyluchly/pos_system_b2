@@ -1,10 +1,6 @@
 @import "main";
 @import "component/nav";
 
-
-@import "component/button";
-
-
 main {
     grid-column: 3/13;
     display: flex;
@@ -68,7 +64,4 @@ main {
 
         }
     }
-
-
 }
-

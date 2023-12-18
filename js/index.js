@@ -19,6 +19,7 @@ let arrayProduct = [
     {id: 5, img: "../IMG/image6.jpg", name: "Samon Fried", quantity: 15, price: 15, category: "American"},
     {id: 6, img: "../IMG/image9.jpg", name: "Khmer Noodles", quantity: 100, price: 5, category: "Khmer"}
 ];
+
 let arrayDetail = [];
 // Show and hide Elements
 function hide(element) {
@@ -31,6 +32,7 @@ function show(element) {
 function saveStorage() {
     localStorage.setItem("arrayProduct", JSON.stringify(arrayProduct));
 }
+
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
@@ -168,6 +170,5 @@ function cancel() {
 // Invoke Function
 loadStorage();
 productDetail();
-saveStorage();
 showProduct();
 // localStorage.clear();
