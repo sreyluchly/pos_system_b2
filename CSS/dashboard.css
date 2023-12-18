@@ -206,59 +206,52 @@ main {
   grid-column: 3/13;
   display: flex;
 }
-
-.category {
-  width: 70%;
-  background: palevioletred;
+main .category {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px;
 }
-.category .total {
-  width: 100%;
+main .category .total {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
-.category .total .total-pay {
+main .category .total .total-pay {
   padding: 10px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(235, 235, 227, 0.329);
   background-color: #fff;
   gap: 20px;
   border-radius: 3px;
+  transition: 0.3s;
 }
-.category .total .total-pay:hover {
-  background: hsla(0, 0%, 100%, 0.666);
+main .category .total .total-pay:hover {
+  background: rgba(235, 235, 227, 0.308);
 }
-.category .total .total-pay .new-order {
+main .category .total .total-pay .new-order {
   display: flex;
   justify-content: space-between;
 }
-
-.products {
-  width: 30%;
-  background-color: crimson;
-  display: flex;
-  justify-content: center;
+main .category .orders-list {
+  width: 100%;
 }
-
-.orders-list {
+main .category .orders-list table {
+  width: 100%;
   padding: 15px;
 }
-.orders-list table {
-  padding: 40px;
-  border: 1px solid #000;
+main .category .orders-list table tr,
+main .category .orders-list table th,
+main .category .orders-list table td {
+  border: 1px solid #eeeeee;
   border-collapse: collapse;
-}
-.orders-list table tr,
-.orders-list table th,
-.orders-list table td {
-  border: 1px solid #000;
-  border-collapse: collapse;
+  background: #eeeeee;
   padding: 20px;
+  text-align: center;
 }
-.orders-list table th {
+main .category .orders-list table th {
   background: #066A69;
+  color: #eeeeee;
 }/*# sourceMappingURL=dashboard.css.map */
