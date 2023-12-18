@@ -1,0 +1,75 @@
+@import "main";
+@import "component/nav";
+
+
+@import "component/button";
+
+
+main {
+    grid-column: 3/13;
+    display: flex;
+}
+
+.category {
+    width: 70%;
+    background: palevioletred;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .total {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .total-pay {
+            padding: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            gap: 20px;
+            border-radius: 3px;
+
+            &:hover {
+                background: hsla(0, 0%, 100%, 0.666);
+            }
+
+            .new-order {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+
+.products {
+    width: 30%;
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.orders-list {
+    padding: 15px;
+    table {
+        padding: 40px;
+        border: 1px solid #000;
+        border-collapse: collapse;
+
+        tr,
+        th,
+        td {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+        th{
+            background: $mainBtnBg;
+        }
+    }
+}

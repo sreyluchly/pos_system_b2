@@ -1,12 +1,21 @@
+@import "variable";
 button {
-    padding: 10px 25px;
+    padding: 10px 20px;
     font-size: 15px;
-    border-radius: 5px 5px 0px 0px;
-    background-color: rgba(255, 255, 255, 0);
+    border-radius: 3px;
+    background-color: $mainBtnBg;
     color: white;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 .after{
-    background: white;
-    color: rgb(79, 79, 79);
+    background: $mainBtnActive;
+    color: white;
+}
+
+.category-after {
+    background: $mainBg;
+    color: white;
+    display: flex;
+    align-content: inherit;
+    gap: 5px;
 }
