@@ -12,28 +12,27 @@ main {
 
     .category {
         width: 100%;
-        // background: palevioletred;
         display: flex;
         flex-direction: column;
-        padding: 20px;
+        padding: 40px;
 
         .total {
-            width: 100%;
+            // width: 100%;
             display: flex;
             justify-content: space-between;
             gap: 20px;
-
             .total-pay {
                 padding: 10px;
                 flex: 1;
                 display: flex;
                 flex-direction: column;
+                border: 1px solid rgba(235, 235, 227, 0.329);
                 background-color: #fff;
                 gap: 20px;
                 border-radius: 3px;
-
+                transition: 0.3s;
                 &:hover {
-                    background: hsla(0, 0%, 100%, 0.666);
+                    background:rgba(235, 235, 227, 0.308);
                 }
 
                 .new-order {
@@ -44,26 +43,27 @@ main {
         }
 
         .orders-list {
-            padding-top: 40px;
+            // padding: 20px;
             width: 100%;
 
             table {
                 width: 100%;
-                padding: 40px;
-                border: 1px solid #000;
-                border-collapse: collapse;
-
+                padding: 15px;
                 tr,
                 th,
                 td {
-                    border: 1px solid #000;
+                    border: 1px solid $mainBorderColor;
                     border-collapse: collapse;
+                    background: $mainBorderColor;
                     padding: 20px;
+                    text-align: center;
                 }
 
                 th {
                     background: $mainBtnBg;
+                    color: $mainBorderColor;
                 }
+                
             }
 
         }
@@ -72,54 +72,3 @@ main {
 
 }
 
-.top-product {
-    // background: orangered;
-    padding-top: 35px;
-    gap: 20px;
-
-    .top {
-        // background: blueviolet;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding-bottom: 35px;
-        .btn {
-            padding: 10px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background-color: #fff;
-            gap: 20px;
-            border-radius: 3px;
-
-            &:hover {
-                background: hsla(0, 0%, 100%, 0.666);
-            }
-
-        }
-
-
-
-    }
-}
-
-.table {
-    width: 100%;
-    // background: blue;
-    padding: 40px;
-    border: 1px solid #000;
-    border-collapse: collapse;
-  
-    tr,
-    th,
-    td {
-        border: 1px solid #000;
-        border-collapse: collapse;
-        padding: 20px;
-    }
-
-    th {
-        background: $mainBtnBg;
-    }
-}

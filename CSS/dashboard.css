@@ -210,10 +210,9 @@ main .category {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px;
 }
 main .category .total {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -223,75 +222,36 @@ main .category .total .total-pay {
   flex: 1;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(235, 235, 227, 0.329);
   background-color: #fff;
   gap: 20px;
   border-radius: 3px;
+  transition: 0.3s;
 }
 main .category .total .total-pay:hover {
-  background: hsla(0, 0%, 100%, 0.666);
+  background: rgba(235, 235, 227, 0.308);
 }
 main .category .total .total-pay .new-order {
   display: flex;
   justify-content: space-between;
 }
 main .category .orders-list {
-  padding-top: 40px;
   width: 100%;
 }
 main .category .orders-list table {
   width: 100%;
-  padding: 40px;
-  border: 1px solid #000;
-  border-collapse: collapse;
+  padding: 15px;
 }
 main .category .orders-list table tr,
 main .category .orders-list table th,
 main .category .orders-list table td {
-  border: 1px solid #000;
+  border: 1px solid #eeeeee;
   border-collapse: collapse;
+  background: #eeeeee;
   padding: 20px;
+  text-align: center;
 }
 main .category .orders-list table th {
   background: #066A69;
-}
-
-.top-product {
-  padding-top: 35px;
-  gap: 20px;
-}
-.top-product .top {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding-bottom: 35px;
-}
-.top-product .top .btn {
-  padding: 10px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  gap: 20px;
-  border-radius: 3px;
-}
-.top-product .top .btn:hover {
-  background: hsla(0, 0%, 100%, 0.666);
-}
-
-.table {
-  width: 100%;
-  padding: 40px;
-  border: 1px solid #000;
-  border-collapse: collapse;
-}
-.table tr,
-.table th,
-.table td {
-  border: 1px solid #000;
-  border-collapse: collapse;
-  padding: 20px;
-}
-.table th {
-  background: #066A69;
+  color: #eeeeee;
 }/*# sourceMappingURL=dashboard.css.map */
