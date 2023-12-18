@@ -169,3 +169,83 @@ aside {
     }
 
 }
+
+.form-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: hsl(0, 0%, 0%, 0.4);
+    z-index: 100;
+    @include flexCenter;
+    display: none;
+
+    #close {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:active {
+            background: #ffffff5d;
+        }
+    }
+
+    form {
+        width: 40%;
+        height: 50%;
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        background-color: #fff;
+        animation: flot 0.5s;
+        h2 {
+            color: $mainBtnBg;;
+        }
+        .name {
+            display: flex;
+            gap: 20px;
+            .f-name, .l-name {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        label {
+            cursor: pointer;
+        }
+        input {
+            width: 100%;
+            color: rgb(50, 50, 50);
+            font-size: 17px;
+            padding: 5px 15px;
+            outline: 1px ridge rgb(132, 132, 132, .3); 
+            border-radius: 2px;
+        }
+    }
+}
+
+@keyframes flot {
+    0% {
+        transform: translateY(10%);
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
