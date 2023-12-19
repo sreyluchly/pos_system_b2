@@ -21,6 +21,7 @@ function hide(element) {
     element.style.display = "none";
 }
 function addRow() {
+    tbody.textContent = "";
     for (const pro of arrayProduct) {
         let tRow = document.createElement('tr');
         let tdName = document.createElement('td');
@@ -32,7 +33,7 @@ function addRow() {
         del.className = "material-symbols-outlined del";
         del.textContent = "delete";
 
-        edit.className = "material-symbols-outlined edit";
+        edit.classList = ["material-symbols-outlined"], ["edit"];
         edit.textContent = "edit";
 
         tdId.textContent = pro.id;
@@ -46,7 +47,14 @@ function addRow() {
         tRow.appendChild(action);
 
         tbody.appendChild(tRow)
+        console.log(pro);
     }
+}
+function delRow(e) {
+        
+}
+function editRow(e) {
+    console.log(1);
 }
 
 
@@ -60,7 +68,6 @@ document.querySelector(".add").onclick = () => {
     addRow();
 }
 
+
 getStorage();
 addRow();
-
-
