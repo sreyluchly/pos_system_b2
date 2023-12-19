@@ -1,5 +1,7 @@
 const mainContainer = document.querySelector(".main-container");
 const tbody = document.querySelector("tbody");
+const formContainer = document.querySelector(".form-container");
+const inputSubmit = document.querySelectorAll('form input');
 let arrayProduct;
 let proId;
 let proCheckout = [];
@@ -14,6 +16,14 @@ function loadStorage() {
         proCheckout = JSON.parse(localStorage.getItem("proCheckout"));
     }
 }
+
+function show(element) {
+    element.style.display = "flex";
+}
+function hide(element) {
+    element.style.display = "none";
+}
+
 
 function showProduct() {
     for (const card of document.querySelectorAll(".card")) {
@@ -45,7 +55,13 @@ function showProduct() {
         card.appendChild(cardFooter);
 
         mainContainer.appendChild(card);
-        card.addEventListener("click", checkout);
+        card.onclick = (event) => {
+            if (arrayProduct[i].quantity > 0) {
+                checkout(event)
+            }else {
+                alert("Out of stock");
+            }
+        };
     }   
 }
 
@@ -95,7 +111,6 @@ function displayProCheckout() {
         qty.value = proCheckout[i].quantity;
         qty.dataset.id = proCheckout[i].id;
         
-        
         tdName.textContent = proCheckout[i].name;
         tdPrice.textContent = `${proCheckout[i].price}$`;
         
@@ -128,6 +143,22 @@ function displayProCheckout() {
     document.getElementById('subTotal').textContent = total.toFixed(2) +"$";
     document.getElementById('total').textContent = Math.round(total).toFixed(2) +"$";
 }
+
+document.getElementById("checkout").onclick = () => {
+    show(formContainer);
+}
+document.getElementById("close").onclick = () => {
+    hide(formContainer);
+}
+document.getElementById("submit").onclick = (event) => {
+    for (const input of inputSubmit) {
+        if (input.value == "") {
+            return
+        }
+    }
+    hide(formContainer);
+}
+
 loadStorage();
 showProduct();
 displayProCheckout();
