@@ -171,15 +171,14 @@ document.getElementById("submit").onclick = (event) => {
     displayProCheckout();
     hide(formContainer);
 }
-loadStorage();
-showProduct();
-displayProCheckout();
-
 document.getElementById("checkout").onclick = () => {
     if (proCheckout.length == 0) {
         return window.alert("You didn't order any product!")
     }
     show(formContainer);
 }
+loadStorage();
+showProduct();
+displayProCheckout();
 
 // localStorage.clear()

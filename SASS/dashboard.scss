@@ -4,7 +4,7 @@
 main {
     grid-column: 3/13;
     display: flex;
-    // background: tomato;
+    overflow-y: scroll;
 
     .category {
         width: 100%;

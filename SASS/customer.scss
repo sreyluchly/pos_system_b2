@@ -21,15 +21,17 @@ main {
                     padding: 15px;
                 }
             }
-            // tbody {
-
-            // }
+            tbody tr {
+                transition: 0.3s;
+                cursor: pointer;
+                &:hover {
+                    background: #f8f8f8;
+                }
+            }
             th, td {
                 padding: 10px;
-                border: 1px solid $mainBorderColor;
+                border: 1px solid #dcdcdc;
             }
-            // tr {
-            // }
         }
     }
 }

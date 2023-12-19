@@ -30,10 +30,10 @@ function displayCustomer() {
         tdEmail.textContent = products.email;
 
         for (const pro of products.product) {
-            totalCost += pro.price;
-            totalQty += pro.quantity;
+            totalCost += parseInt(pro.price);
+            totalQty += parseInt(pro.quantity);
         }
-        tdCost.textContent = totalCost +"$";
+        tdCost.textContent = totalCost * totalQty +"$";
         tdQty.textContent = totalQty
 
         tr.appendChild(tdId);

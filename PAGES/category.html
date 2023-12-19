@@ -52,7 +52,7 @@
         </a>
         <a href="#" class="after">
             <li>
-                <span class="material-symbols-outlined">groups</span>
+                <span class="material-symbols-outlined">category</span>
                 <span>Category</span>
             </li>
         </a>
@@ -64,22 +64,17 @@
         </a>
     </ul>
     <main>
-        <div class="container-category">
-            <h1>Choose Category</h1>
-            <div class="container-div">
-                <div>Khmer Food</div>
-                <div>American Food</div>
-                <div>Italy Food</div>
-                <div>Other</div>
-            </div>
+        <div class="all-cate">
+            <button class="cate active">All Category</button>
+            <button class="cate">All Category</button>
+            <button class="cate">All Category</button>
+            <button class="cate">All Category</button>
         </div>
-        <button id="addCate">
-            Add Category
-            <span class="material-symbols-outlined">
-                add
-            </span>
-        </button>
-        <div class="container-table">
+        <div class="table-container">
+            <button class="add" id="add">
+                <span class="material-symbols-outlined">add</span>
+                Add Category
+            </button>
             <table>
                 <thead>
                     <tr>
@@ -89,41 +84,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr>
-                        <td>1</td>
+                    <tr>
+                        <td>01</td>
                         <td>Khmer Food</td>
                         <td>
-                            <div class="container-span">
-                                <span class="material-symbols-outlined edit">
-                                    edit
-                                </span>
-                                <span class="material-symbols-outlined del">
-                                    delete
-                                </span>
-                            </div>
+                            <span class="material-symbols-outlined">delete</span>
+                            <span class="material-symbols-outlined">edit</span>
                         </td>
-                    </tr> -->
-                </tbody 
+                    </tr>
+                </tbody>
             </table>
         </div>
     </main>
-    <div class="container-form">
-        <div class="container-input">
-            <div class="container-inputname">
-                <label>Product Name*</label>
-                <input class="input-name" type="text" placeholder="Product Name*" required />
-            </div>
-            <div class="container-decription">
-                <label>Decription*</label>
-                <textarea placeholder=" Decription*"></textarea>
-            </div>
-            <div class="container-button">
-                <button class="add">Add</button>                
-                <button class="cancel">Cancel</button>                
-            </div>
-        </div>
-    </div>
-    <!-- <input type="text" placeholder="name"> -->
     <script src="../js/category.js"></script>
 </body>
 

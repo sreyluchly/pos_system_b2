@@ -1,73 +1,34 @@
-const containerForm = document.querySelector(".container-form");
-const inputName = document.querySelector(".input-name");
 const tbody = document.querySelector("tbody");
-
 let arrayProduct = [];
-
-function saveStorage() {
-    localStorage.setItem("arrayProduct", JSON.stringify(arrayProduct));
+let categories = []
+function loadStorage() {
+    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    arrayProduct.forEach(product => {
+        categories.push(product.category)
+    });
+    categories = [...new Set(categories)]
 }
 
-function getStorage() {
-    if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
-        arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+function showCategory() {
+    for (const tr of document.querySelectorAll('tbody tr')) {
+        tr.remove()
+    }
+    
+    for (let i=0; i<categories.length; i++) {
+        const tr = document.createElement("tr");
+        const tdId = document.createElement("td");
+        const tdCate = document.createElement("td");
+        const tdAction = document.createElement("td");
+
+        tdId.textContent = i + 1    
+        tdCate.textContent = categories[i]
+        tbody.appendChild(tr);
+        tr.appendChild(tdId);
+        tr.appendChild(tdCate);
+        tr.appendChild(tdAction);
     }
 }
 
-function show(element) {
-    element.style.display = "flex";
-}
-function hide(element) {
-    element.style.display = "none";
-}
-function addRow() {
-    tbody.textContent = "";
-    for (const pro of arrayProduct) {
-        let tRow = document.createElement('tr');
-        let tdName = document.createElement('td');
-        let tdId = document.createElement('td');
-        let action = document.createElement('td');
-        let del = document.createElement('span');
-        let edit = document.createElement('span');
 
-        del.className = "material-symbols-outlined del";
-        del.textContent = "delete";
-
-        edit.classList = ["material-symbols-outlined"], ["edit"];
-        edit.textContent = "edit";
-
-        tdId.textContent = pro.id;
-        tdName.textContent = pro.category;
-
-        action.appendChild(del);
-        action.appendChild(edit);
-
-        tRow.appendChild(tdId);
-        tRow.appendChild(tdName);
-        tRow.appendChild(action);
-
-        tbody.appendChild(tRow)
-        console.log(pro);
-    }
-}
-function delRow(e) {
-        
-}
-function editRow(e) {
-    console.log(1);
-}
-
-
-document.getElementById("addCate").onclick = () => {
-    show(containerForm);
-}
-document.querySelector(".cancel").onclick = () => {
-    hide(containerForm);
-}
-document.querySelector(".add").onclick = () => {
-    addRow();
-}
-
-
-getStorage();
-addRow();
+loadStorage()
+showCategory();
