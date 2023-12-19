@@ -54,7 +54,7 @@ function delRow(e) {
         
 }
 function editRow(e) {
-    console.log(1);
+    
 }
 
 
