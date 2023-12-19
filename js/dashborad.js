@@ -1,10 +1,11 @@
 const tbody = document.querySelector('tbody');
 let arrayProduct = [];
-
-
+let productOrderd = [];
 
 function loadStorage() {
-    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
+        arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    }
 }
 
 function displayTable() {
@@ -50,19 +51,3 @@ function displayTable() {
 
 loadStorage();
 displayTable();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

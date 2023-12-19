@@ -1,0 +1,39 @@
+@import "component/nav";
+@import "main";
+
+main {
+    grid-column: 3 / 13;
+    padding: 40px;
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        h2 {
+            color: $mainBtnBg;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            thead {
+                background: $mainBtnBg;
+                color: white;
+                th {
+                    padding: 15px;
+                }
+            }
+            tbody tr {
+                transition: 0.3s;
+                cursor: pointer;
+                &:hover {
+                    background: #f8f8f8;
+                }
+            }
+            th, td {
+                padding: 10px;
+                border: 1px solid #dcdcdc;
+            }
+        }
+    }
+}
+
+@import "component/button";

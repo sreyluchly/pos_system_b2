@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="../CSS/category.css">
     <title>Category</title>
 </head>
+
 <body>
-    
+
     <div class="logo">
         <h2>POS System</h2>
     </div>
@@ -50,11 +52,51 @@
         </a>
         <a href="#" class="after">
             <li>
-                <span class="material-symbols-outlined">groups</span>
+                <span class="material-symbols-outlined">category</span>
                 <span>Category</span>
             </li>
         </a>
+        <a href="/PAGES/customer.html">
+            <li>
+                <span class="material-symbols-outlined">Groups</span>
+                <span>Customers</span>
+            </li>
+        </a>
     </ul>
-
+    <main>
+        <div class="all-cate">
+            <button class="cate active">All Category</button>
+            <button class="cate">All Category</button>
+            <button class="cate">All Category</button>
+            <button class="cate">All Category</button>
+        </div>
+        <div class="table-container">
+            <button class="add" id="add">
+                <span class="material-symbols-outlined">add</span>
+                Add Category
+            </button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category ID</th>
+                        <th>Category Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Khmer Food</td>
+                        <td>
+                            <span class="material-symbols-outlined">delete</span>
+                            <span class="material-symbols-outlined">edit</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="../js/category.js"></script>
 </body>
-</html> 
+
+</html>

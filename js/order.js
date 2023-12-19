@@ -2,18 +2,23 @@ const mainContainer = document.querySelector(".main-container");
 const tbody = document.querySelector("tbody");
 const formContainer = document.querySelector(".form-container");
 const inputSubmit = document.querySelectorAll('form input');
-let arrayProduct;
+let arrayProduct = [];
 let proId;
 let proCheckout = [];
+let productOrderd = [];
 
 function saveStorage() {
     localStorage.setItem("arrayProduct", JSON.stringify(arrayProduct));
     localStorage.setItem("proCheckout", JSON.stringify(proCheckout));
+    localStorage.setItem("productOrderd", JSON.stringify(productOrderd));
 }
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
         proCheckout = JSON.parse(localStorage.getItem("proCheckout"));
+    }
+    if (JSON.parse(localStorage.getItem("productOrderd")) != null) {
+        productOrderd = JSON.parse(localStorage.getItem("productOrderd"));
     }
 }
 
@@ -23,7 +28,6 @@ function show(element) {
 function hide(element) {
     element.style.display = "none";
 }
-
 
 function showProduct() {
     for (const card of document.querySelectorAll(".card")) {
@@ -73,6 +77,7 @@ function checkout(event) {
         name: arrayProduct[proId].name,
         quantity: 1,
         price: arrayProduct[proId].price,
+        category: arrayProduct[proId].category
     };
     arrayProduct[proId].quantity -= 1;
     for (const pro of proCheckout) {
@@ -112,7 +117,7 @@ function displayProCheckout() {
         qty.dataset.id = proCheckout[i].id;
         
         tdName.textContent = proCheckout[i].name;
-        tdPrice.textContent = `${proCheckout[i].price}$`;
+        tdPrice.textContent = `${proCheckout[i].price * proCheckout[i].quantity}$`;
         
         total += proCheckout[i].price * proCheckout[i].quantity;
         
@@ -123,8 +128,7 @@ function displayProCheckout() {
         tr.appendChild(tdPrice);
         tr.appendChild(tdAction);
         tbody.appendChild(tr);
-        
-        
+
         // Remove product checkout
         removeOrder.onclick = (event) => {
             arrayProduct[event.target.dataset.id].quantity += parseInt(proCheckout[i].quantity);
@@ -144,21 +148,37 @@ function displayProCheckout() {
     document.getElementById('total').textContent = Math.round(total).toFixed(2) +"$";
 }
 
-document.getElementById("checkout").onclick = () => {
-    show(formContainer);
-}
 document.getElementById("close").onclick = () => {
     hide(formContainer);
 }
 document.getElementById("submit").onclick = (event) => {
+    event.preventDefault();
     for (const input of inputSubmit) {
         if (input.value == "") {
-            return
+            return window.alert("Please Enter the field!")
         }
     }
+    let userInfo = {
+        id: productOrderd.length + 1,
+        name: document.getElementById("f-name").value + document.getElementById("l-name").value,
+        email: document.getElementById("email").value,
+        product: proCheckout
+    };
+    productOrderd.push(userInfo);
+    proCheckout = [];
+    console.log(productOrderd);
+    saveStorage();
+    displayProCheckout();
     hide(formContainer);
 }
-
+document.getElementById("checkout").onclick = () => {
+    if (proCheckout.length == 0) {
+        return window.alert("You didn't order any product!")
+    }
+    show(formContainer);
+}
 loadStorage();
 showProduct();
 displayProCheckout();
+
+// localStorage.clear()
