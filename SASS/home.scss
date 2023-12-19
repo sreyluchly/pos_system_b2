@@ -1,0 +1,28 @@
+@import "component/group-mixin";
+@import "component/variable";
+@import "component/button";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+}
+body {
+    display: flex;
+    align-items: center;
+    padding: 100px;
+    img {
+        width: 70%;
+        margin-left: auto;
+    }
+    p{
+        padding: 10px;
+    }
+    button{
+        border: none;
+        padding: 15px;
+        background: $mainBtnActive;
+        cursor: pointer;
+    }
+}
+
+
