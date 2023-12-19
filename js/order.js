@@ -171,7 +171,6 @@ document.getElementById("submit").onclick = (event) => {
     displayProCheckout();
     hide(formContainer);
 }
-
 loadStorage();
 showProduct();
 displayProCheckout();
@@ -182,3 +181,5 @@ document.getElementById("checkout").onclick = () => {
     }
     show(formContainer);
 }
+
+// localStorage.clear()

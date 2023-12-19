@@ -51,5 +51,3 @@ function displayTable() {
 
 loadStorage();
 displayTable();
-
-let testArray = arrayProduct.filter()
