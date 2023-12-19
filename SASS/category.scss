@@ -1,155 +1,64 @@
 @import "component/nav";
 @import "main";
+@import "component/button";
+
 main {
     display: flex;
-    grid-column: 3 / 13;
     flex-direction: column;
-    padding: 30px;
-
-    .container-category {
+    grid-column: 3 / 13;
+    padding: 20px;
+    gap: 40px;
+    overflow-y: scroll;
+    .all-cate {
         flex: 1;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        button {
+            padding: 10px 30px;
+            background: transparent;
+            border: 1px solid $mainBorderColor;
+            color: rgb(101, 101, 101);
+        }
+        .active {
+            background: $mainBtnActive;
+        }
+    }
+    .table-container {
+        flex: 6;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 20px;
-
-        h1 {
-            color: $mainBtnBg;
+        button {
+            width: 180px;
+            @include flexCenter;
+            padding: 10px;
+            gap: 10px;
         }
-
-        .container-div {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-
-            div {
-                background: $mainBorderColor;
-                padding: 20px 20px;
-                border-radius: 3px;
-                cursor: pointer;
-                transition: 0.3s;
-                &:hover {
-                    color: $mainBorderColor;
-                    background: $mainBtnBg;
-                }
-            }
-        }
-    }
-
-    button {
-        width: 16%;
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
-        &:hover{
-            background: $mainBorderColor;
-            color: $mainBtnBg;
-        }
-    }
-
-    .container-table {
-        flex: 2;
         table {
-            border-collapse: collapse;
             width: 100%;
-            // display: none;
-            th, td{
-                border: 1px solid #ddd;
-                text-align: center;
-                padding: 15px;
-            }
-            th{
-                background: $mainBtnBg;
-                color: white;
-            }
-            td{
-                .container-span{
-                    display: flex;
-                    justify-content: space-around;
-                    .edit{
-                        color: $mainBtnBg;
-                        cursor: pointer;
-                    }
-                    .del{
-                        color: tomato;
-                        cursor: pointer;
-                    }
+            border-collapse: collapse;
+            thead {
+                tr {
+                    background-color: $mainBtnBg;
+                    color: white;
                 }
-                
+                th {
+                    padding: 10px;
+                }
+            }
+            td, th {
+                padding: 8px;
+                border: 1px solid $mainBorderColor;
+            }
+            td {
+                padding: 10px;
+            }
+            td:nth-child(3) {
+                text-align: center;
             }
         }
     }
 }
-.container-form{
-    position: absolute;
-    background: rgba(65, 65, 65, 0);
-    width:100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    background: hsl(0, 0%, 0%, 0.4);
-    z-index: 100;
-    display: none;
-    .container-input{
-        background: $mainBorderColor;
-        display: flex;
-        flex-direction: column;
-        width: 60%;
-        height: 80%;
-        margin: auto;
-        border-radius: 3px;
-        padding: 30px;
-        gap: 30px;
-        .container-inputname{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            label{
-                color: $mainBtnBg;
-                font-size: 20px;
-            }
-            input{
-                padding: 20px;
-                border-radius: 3px;
-            }
-
-        }
-        .container-decription{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            label{
-                color: $mainBtnBg;
-                font-size: 20px;
-            }
-            textarea{
-                padding: 20px;
-                border-radius: 3px;
-                max-width: 100%;
-                max-height: 20vh;
-                min-width: 100%;
-                min-height: 20vh;
-            }
-        }
-        .container-button{  
-            display: flex;
-            gap: 10px;
-            .add{
-                &:hover{
-                    background:  rgb(209, 209, 209);
-                    color: white;
-                }
-            }
-            .cancel{
-                background: tomato;
-                &:hover{
-                    background: rgb(209, 209, 209);
-                }
-            }
-        }
-        
-    }
-}  
-
-@import "component/button";

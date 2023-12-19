@@ -144,9 +144,6 @@ inputSearch.oninput = (event) => {
     showProduct();
 }
 
-// Show form
-
-
 // Edit product
 function editPro() {
     show(formAdd);
@@ -168,7 +165,6 @@ function cancel() {
     hide(formAdd);
 }
 // Invoke Function
-saveStorage();
 loadStorage();
 productDetail();
 showProduct();
