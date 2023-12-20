@@ -69,4 +69,5 @@ function showProduct() {
 }
 
 loadStorage();
+saveStorage();
 showProduct();

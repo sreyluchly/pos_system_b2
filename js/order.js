@@ -210,8 +210,8 @@ inputSearch.oninput = (event) => {
     arrayProduct = arrayProduct.filter((product) => product.name.toLowerCase().includes(event.target.value.toLowerCase()));
     showProduct();
 }
-
 loadStorage();
+saveStorage();
 showProduct();
 displayProCheckout();
 filter();

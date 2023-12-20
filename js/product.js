@@ -201,6 +201,7 @@ function cancel() {
     hide(formAdd);
 }
 // Invoke Function
+saveStorage();
 loadStorage();
 filter()
 cateOption();
