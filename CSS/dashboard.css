@@ -110,7 +110,7 @@ aside {
 button {
   padding: 10px 20px;
   font-size: 15px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #066A69;
   color: white;
   transition: 0.4s;
@@ -183,54 +183,67 @@ nav .nav-right button span {
 main {
   grid-column: 3/13;
   display: flex;
+  flex-direction: column;
   overflow-y: scroll;
 }
-main .category {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
-}
-main .category .total {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-main .category .total .total-pay {
-  padding: 10px;
+main .product-info {
   flex: 1;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(235, 235, 227, 0.329);
-  background-color: #fff;
   gap: 20px;
-  border-radius: 3px;
-  transition: 0.3s;
+  box-shadow: rgba(33, 35, 38, 0.43) 0px 10px 10px -10px;
+  background: hsla(0, 0%, 93%, 0.8);
+  z-index: 1;
 }
-main .category .total .total-pay:hover {
-  background: rgba(235, 235, 227, 0.308);
+main .product-info .pro {
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid #eeeeee;
+  background: white;
+  cursor: pointer;
+  gap: 20px;
 }
-main .category .total .total-pay .new-order {
+main .product-info .pro .name {
   display: flex;
   justify-content: space-between;
 }
-main .category .orders-list {
-  width: 100%;
+main .product-info .pro .number {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
-main .category .orders-list table {
+main .product-info .after {
+  background: #066A69;
+}
+main .table-container {
+  overflow-y: scroll;
+  flex: 3;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .table-container h2 {
+  color: #e4ae27;
+}
+main .table-container table {
   width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+main .table-container table thead tr {
+  background: #e4ae27;
+}
+main .table-container table thead tr th {
   padding: 15px;
 }
-main .category .orders-list table tr,
-main .category .orders-list table th,
-main .category .orders-list table td {
-  border: 1px solid #eeeeee;
-  border-collapse: collapse;
-  background: #eeeeee;
-  padding: 20px;
-  text-align: center;
+main .table-container table td {
+  padding: 10px;
 }
-main .category .orders-list table th {
-  background: #066A69;
-  color: #eeeeee;
+main .table-container table th, main .table-container table td {
+  border: 1px solid #eeeeee;
 }/*# sourceMappingURL=dashboard.css.map */

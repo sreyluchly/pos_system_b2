@@ -17,7 +17,7 @@ main {
         width: 100%;
         button {
             padding: 10px 30px;
-            background: transparent;
+            background: $mainBtnActive;
             border: 1px solid $mainBorderColor;
             color: rgb(101, 101, 101);
         }
@@ -32,10 +32,12 @@ main {
         flex-direction: column;
         gap: 20px;
         button {
-            width: 180px;
+            width: 190px;
             @include flexCenter;
-            padding: 10px;
+            padding: 15px;
             gap: 10px;
+            background: $mainBtnActive;
+            font-size: 17px;
         }
         table {
             width: 100%;
@@ -49,6 +51,14 @@ main {
                     padding: 10px;
                 }
             }
+            tbody {
+                tr {
+                    transition: 0.3s;
+                    &:hover {
+                        background: #f4f4f4;
+                    }
+                }
+            }
             td, th {
                 padding: 8px;
                 border: 1px solid $mainBorderColor;
@@ -57,8 +67,97 @@ main {
                 padding: 10px;
             }
             td:nth-child(3) {
-                text-align: center;
+                @include flexCenter;
+                gap: 15px;
+                span {
+                    cursor: pointer;
+                }
+                span:nth-child(1) {
+                    color: tomato;
+                }
+                span:nth-child(2) {
+                    color: teal;
+                }
             }
         }
+    }
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    background: hsl(0, 0%, 0%, 0.4);
+    @include flexCenter;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+
+    h2 {
+        color: $mainBtnBg;
+    }
+    #close {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        @include flexCenter;
+        &:active {
+            background: #ffffff5d;
+        }
+    }
+    form {
+        animation: flot 0.5s;
+        background-color: #fff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 40%;
+        label {
+            cursor: pointer;
+        }
+        .cate-name, .cate-descript {
+            flex: 1;
+            display: flex;
+            gap: 5px;
+            width: 100%;
+            flex-direction: column;
+        }
+        input, textarea {
+            border: 1px solid $mainBorderColor;
+            padding: 5px;
+            border-radius: 2px;
+            outline: 1px ridge rgb(132, 132, 132, .3); 
+            &:focus {
+                outline: 1px ridge rgb(132, 132, 132, .6); 
+            }
+            
+        }
+        textarea {
+            max-width: 100%;
+            min-height: 50px;
+            max-height: 150px;
+        }
+    }
+}
+@keyframes flot {
+    0% {
+        transform: translateY(10%);
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
     }
 }

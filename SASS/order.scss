@@ -31,11 +31,11 @@ main {
             color: black;
             border: 1px solid $mainBorderColor;
             padding: 0px 5px;
-
+            background: transparent;
             &:active {
                 outline: 1px ridge rgb(132, 132, 132, .3);
             }
-
+            
             select {
                 padding: 10px;
                 font-size: 17px;
@@ -189,9 +189,7 @@ aside {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexCenter;
         &:active {
             background: #ffffff5d;
         }

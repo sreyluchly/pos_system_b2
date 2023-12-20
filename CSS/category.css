@@ -161,7 +161,7 @@ aside {
 button {
   padding: 10px 20px;
   font-size: 15px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #066A69;
   color: white;
   transition: 0.4s;
@@ -183,7 +183,7 @@ button {
 button {
   padding: 10px 20px;
   font-size: 15px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #066A69;
   color: white;
   transition: 0.4s;
@@ -219,7 +219,7 @@ main .all-cate {
 }
 main .all-cate button {
   padding: 10px 30px;
-  background: transparent;
+  background: #e4ae27;
   border: 1px solid #eeeeee;
   color: rgb(101, 101, 101);
 }
@@ -234,12 +234,14 @@ main .table-container {
   gap: 20px;
 }
 main .table-container button {
-  width: 180px;
+  width: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   gap: 10px;
+  background: #e4ae27;
+  font-size: 17px;
 }
 main .table-container table {
   width: 100%;
@@ -252,6 +254,12 @@ main .table-container table thead tr {
 main .table-container table thead th {
   padding: 10px;
 }
+main .table-container table tbody tr {
+  transition: 0.3s;
+}
+main .table-container table tbody tr:hover {
+  background: #f4f4f4;
+}
 main .table-container table td, main .table-container table th {
   padding: 8px;
   border: 1px solid #eeeeee;
@@ -260,5 +268,97 @@ main .table-container table td {
   padding: 10px;
 }
 main .table-container table td:nth-child(3) {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+main .table-container table td:nth-child(3) span {
+  cursor: pointer;
+}
+main .table-container table td:nth-child(3) span:nth-child(1) {
+  color: tomato;
+}
+main .table-container table td:nth-child(3) span:nth-child(2) {
+  color: teal;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  background: hsla(0, 0%, 0%, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: none;
+}
+.form-container h2 {
+  color: #066A69;
+}
+.form-container #close {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container #close:active {
+  background: rgba(255, 255, 255, 0.3647058824);
+}
+.form-container form {
+  animation: flot 0.5s;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+}
+.form-container form label {
+  cursor: pointer;
+}
+.form-container form .cate-name, .form-container form .cate-descript {
+  flex: 1;
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  flex-direction: column;
+}
+.form-container form input, .form-container form textarea {
+  border: 1px solid #eeeeee;
+  padding: 5px;
+  border-radius: 2px;
+  outline: 1px ridge rgba(132, 132, 132, 0.3);
+}
+.form-container form input:focus, .form-container form textarea:focus {
+  outline: 1px ridge rgba(132, 132, 132, 0.6);
+}
+.form-container form textarea {
+  max-width: 100%;
+  min-height: 50px;
+  max-height: 150px;
+}
+
+@keyframes flot {
+  0% {
+    transform: translateY(10%);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=category.css.map */

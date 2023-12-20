@@ -161,7 +161,7 @@ aside {
 button {
   padding: 10px 20px;
   font-size: 15px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #066A69;
   color: white;
   transition: 0.4s;
@@ -183,6 +183,7 @@ button {
 main {
   grid-column: 3/13;
   padding: 40px;
+  overflow-y: scroll;
 }
 main .content {
   display: flex;
@@ -218,7 +219,7 @@ main .content table th, main .content table td {
 button {
   padding: 10px 20px;
   font-size: 15px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #066A69;
   color: white;
   transition: 0.4s;

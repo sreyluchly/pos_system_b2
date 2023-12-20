@@ -15,7 +15,7 @@
 <body>
     
     <div class="logo">
-        <h2>POS System</h2>
+        <a href="/index.html"><h2>POS System</h2></a>
     </div>
 
     <nav>
@@ -27,7 +27,7 @@
         <div class="nav-right">
             <!-- <span class="material-symbols-outlined">menu</span> -->
             <div class="profile">
-                <p id="name">Name</p><span class="material-symbols-outlined">Lock</span>
+                <p id="name">Mengkorng</p><span class="material-symbols-outlined">Lock</span>
             </div>
             <button type="button">
                 <span class="material-symbols-outlined dark">dark_mode</span>
@@ -42,7 +42,7 @@
                 <span>Dashboard</span>
             </li>
         </a>
-        <a href="/PAGES/index.html">
+        <a href="/PAGES/product.html">
             <li>
                 <span class="material-symbols-outlined">shopping_cart</span>
                 <span>Products</span>
@@ -69,50 +69,63 @@
     </ul>
 
     <main>
-        <div class="category">
-            <div class="total">
-                <div class="total-pay">
-                    <div class="new-order">
-                        <h2>Product</h2>
-                    </div>
-                    <div class="new-update">
-                        <h2>4</h2>
-                    </div>
+        <div class="product-info">
+            <div class="stock pro after">
+                <div class="name">
+                    <h4>Product in Stock</h4>
+                    <span class="material-symbols-outlined">inventory</span>
                 </div>
-                <div class="total-pay">
-                    <div class="new-order">
-                        <h2>Category</h2>
-                    </div>
-                    <div class="new-update">
-                        <h2>4</h2>
-                    </div>
-                </div>
-                <div class="total-pay">
-                    <div class="new-order">
-                        <h2>Quantity</h2>
-                    </div>
-                    <div class="new-update">
-                        <h2 id="allQty">4</h2>
-                        
-                    </div>
+                <div class="number">
+                    <h2 id="pro-stock">1</h2>
+                    <span>Lorem ipsum dolor sit.</span>
                 </div>
             </div>
-            <div class="orders-list">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name Product</th>
-                            <th>Category</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+            <div class="category pro">
+                <div class="name">
+                    <h4>Category</h4>
+                    <span class="material-symbols-outlined">inventory</span>
+                </div>
+                <div class="number">
+                    <h2 id="pro-cate"></h2>
+                    <span>Lorem ipsum dolor sit.</span>
+                </div>
             </div>
-           
+            <div class="sold-out pro">
+                <div class="name">
+                    <h4>Sold Out</h4>
+                    <span class="material-symbols-outlined">inventory</span>
+                </div>
+                <div class="number">
+                    <h2 id="pro-sold"></h2>
+                    <span>Lorem ipsum dolor sit.</span>
+                </div>
+            </div>
+            <div class="income pro">
+                <div class="name">
+                    <h4>Income</h4>
+                    <span class="material-symbols-outlined">inventory</span>
+                </div>
+                <div class="number">
+                    <h2 id="pro-icome">1</h2>
+                    <span>Lorem ipsum dolor sit.</span>
+                </div>
+            </div>
+        </div>
+        <div class="table-container">
+            <h2>Top Selling Products</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Sell Progress</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </main>
     <script src="/js/dashborad.js"></script>
