@@ -13,6 +13,7 @@ function loadStorage() {
     }
 }
 
+//show category
 function showCategory() {
     for (const tr of document.querySelectorAll('tbody tr')) {
         tr.remove()

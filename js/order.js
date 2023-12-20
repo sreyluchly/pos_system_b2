@@ -18,8 +18,6 @@ function saveStorage() {
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
-    }
-    if (JSON.parse(localStorage.getItem("proCheckout")) != null) {
         proCheckout = JSON.parse(localStorage.getItem("proCheckout"));
     }
     if (JSON.parse(localStorage.getItem("productOrderd")) != null) {
@@ -89,8 +87,8 @@ function checkout(event) {
     for (const pro of proCheckout) {
       if (pro.name == product.name) {
         pro.quantity = parseInt(pro.quantity) + 1;
-        displayProCheckout();
         saveStorage();
+        displayProCheckout();
         return;
       }
     }
@@ -213,8 +211,8 @@ inputSearch.oninput = (event) => {
     arrayProduct = arrayProduct.filter((product) => product.name.toLowerCase().includes(event.target.value.toLowerCase()));
     showProduct();
 }
+
 loadStorage();
-saveStorage();
 showProduct();
 displayProCheckout();
 filter();
