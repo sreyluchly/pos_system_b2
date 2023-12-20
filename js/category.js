@@ -1,11 +1,10 @@
 const tbody = document.querySelector("tbody");
 const formContainer = document.getElementById("form");
 let arrayProduct = [];
-let categories = ["Khmer", "American", "Italian", "Japanese"];
-
+let categories = [];
 
 function saveStorage() {
-    localStorage.setItem("categories", JSON.stringify(categories))
+    localStorage.setItem("categories", JSON.stringify(categories));
 }
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("categories")) != null) {
@@ -18,7 +17,6 @@ function showCategory() {
     for (const tr of document.querySelectorAll('tbody tr')) {
         tr.remove()
     }
-    
     for (let i=0; i<categories.length; i++) {
         const tr = document.createElement("tr");
         const tdId = document.createElement("td");
@@ -97,5 +95,6 @@ function createCate() {
     }
 }
 
-loadStorage()
+// localStorage.clear()
+loadStorage();
 showCategory();

@@ -1,17 +1,29 @@
 const tbody = document.querySelector('tbody');
-let arrayProduct = [];
+let arrayProduct = [
+    {id: 1, img: "../IMG/image1.jpg", name: "Ash", quantity: 10, price: 10, category: "American"},
+    {id: 2, img: "../IMG/image2.jpg", name: "Spaghetti", quantity: 15, price: 10, category: "Italian"},
+    {id: 3, img: "../IMG/image3.jpg", name: "Raman Noodles", quantity: 20, price: 5, category: "Japanese"},
+    {id: 4, img: "../IMG/image4.jpg", name: "Sushi", quantity: 5, price: 100, category: "Japanese"},
+    {id: 5, img: "../IMG/image6.jpg", name: "Samon Fried", quantity: 15, price: 15, category: "American"},
+    {id: 6, img: "../IMG/image9.jpg", name: "Khmer Noodles", quantity: 100, price: 5, category: "Khmer"}
+];
 let productOrderd = [];
-let categories = [];
+let categories = ["Khmer", "American", "Italian", "Japanese"];
 
 function saveStorage() {
     localStorage.setItem("categories", JSON.stringify(categories))
+    localStorage.setItem("arrayProduct", JSON.stringify(arrayProduct))
 }
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
     }
-    categories = JSON.parse(localStorage.getItem("categories"));
-    productOrderd = JSON.parse(localStorage.getItem("productOrderd"));
+    if (JSON.parse(localStorage.getItem("categories")) != null) {
+        categories = JSON.parse(localStorage.getItem("categories"));
+    }
+    if (JSON.parse(localStorage.getItem("productOrderd")) != null) {
+        productOrderd = JSON.parse(localStorage.getItem("productOrderd"));
+    }
 }
 
 function showProduct() {
@@ -67,6 +79,8 @@ function showProduct() {
     document.getElementById("pro-sold").textContent = soldOut;
     document.getElementById("pro-icome").textContent = `${income}$`;
 }
-
+if (JSON.parse(localStorage.getItem("arrayProduct")) == null || JSON.parse(localStorage.getItem("categories")) == null) {
+    saveStorage();
+}
 loadStorage();
 showProduct();

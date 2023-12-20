@@ -18,12 +18,16 @@ function saveStorage() {
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    }
+    if (JSON.parse(localStorage.getItem("proCheckout")) != null) {
         proCheckout = JSON.parse(localStorage.getItem("proCheckout"));
     }
     if (JSON.parse(localStorage.getItem("productOrderd")) != null) {
         productOrderd = JSON.parse(localStorage.getItem("productOrderd"));
     }
-    categories = JSON.parse(localStorage.getItem("categories"));
+    if (JSON.parse(localStorage.getItem("categories")) != null) {
+        categories = JSON.parse(localStorage.getItem("categories"));
+    }
 }
 
 function show(element) {
@@ -152,9 +156,12 @@ function displayProCheckout() {
     document.getElementById('total').textContent = Math.round(total).toFixed(2) +"$";
 }
 
+// hide form 
 document.getElementById("close").onclick = () => {
     hide(formContainer);
 }
+
+// submit
 document.getElementById("submit").onclick = (event) => {
     event.preventDefault();
     for (const input of inputSubmit) {
@@ -175,6 +182,7 @@ document.getElementById("submit").onclick = (event) => {
     displayProCheckout();
     hide(formContainer);
 }
+
 document.getElementById("checkout").onclick = () => {
     if (proCheckout.length == 0) {
         return window.alert("You didn't order any product!")

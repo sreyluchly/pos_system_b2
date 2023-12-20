@@ -12,15 +12,6 @@ const cate = document.getElementById("cate");
 
 let proId;
 
-let arrayProduct = [
-    {id: 1, img: "../IMG/image1.jpg", name: "Ash", quantity: 10, price: 10, category: "American"},
-    {id: 2, img: "../IMG/image2.jpg", name: "Spaghetti", quantity: 15, price: 10, category: "Italian"},
-    {id: 3, img: "../IMG/image3.jpg", name: "Raman Noodles", quantity: 20, price: 5, category: "Japanese"},
-    {id: 4, img: "../IMG/image4.jpg", name: "Sushi", quantity: 5, price: 100, category: "Japanese"},
-    {id: 5, img: "../IMG/image6.jpg", name: "Samon Fried", quantity: 15, price: 15, category: "American"},
-    {id: 6, img: "../IMG/image9.jpg", name: "Khmer Noodles", quantity: 100, price: 5, category: "Khmer"}
-];
-
 let categories = [];
 
 let arrayDetail = [];
@@ -39,7 +30,9 @@ function saveStorage() {
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
-        categories = JSON.parse(localStorage.getItem("categories"))
+    }
+    if (JSON.parse(localStorage.getItem("categories")) != null) {
+        categories = JSON.parse(localStorage.getItem("categories"));
     }
 }
 
@@ -200,9 +193,10 @@ function cateOption() {
 function cancel() {
     hide(formAdd);
 }
+
 // Invoke Function
 loadStorage();
-filter()
+filter();
 cateOption();
 productDetail();
 showProduct();
