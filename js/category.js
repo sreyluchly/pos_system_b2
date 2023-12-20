@@ -95,6 +95,6 @@ function createCate() {
         alert("Please enter category name!")
     }
 }
-loadStorage();
-saveStorage();
+
+loadStorage()
 showCategory();
