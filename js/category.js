@@ -17,6 +17,7 @@ function showCategory() {
     for (const tr of document.querySelectorAll('tbody tr')) {
         tr.remove()
     }
+    
     for (let i=0; i<categories.length; i++) {
         const tr = document.createElement("tr");
         const tdId = document.createElement("td");
@@ -44,15 +45,17 @@ function showCategory() {
         tr.appendChild(tdAction);
         tbody.appendChild(tr);
 
+        // delete category
         del.onclick = (event) => {
-            if (window.confirm("Are you sure I want to delete this Category!")) {
-                categories.splice(event.target.dataset.id);
-                console.log(categories);
-                saveStorage()
-                showCategory()
-                return
+            if (window.confirm("Are you sure you want to delete this Category?")) {
+                let id = event.target.dataset.id;
+                categories.splice(id, 1);
+                saveStorage();
+                showCategory();
             }
         }
+    
+        // edit category
         edit.onclick = (event) => {
             let id = event.target.dataset.id
             formContainer.style.display = "flex";
@@ -92,6 +95,5 @@ function createCate() {
         alert("Please enter category name!")
     }
 }
-
 loadStorage()
 showCategory();

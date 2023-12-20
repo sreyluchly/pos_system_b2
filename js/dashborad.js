@@ -35,7 +35,7 @@ function showProduct() {
         tdCate.textContent = pro.category;
         tdPrice.textContent = `$ ${pro.price}`;
 
-        tdAmount.textContent = pro.price * 3;
+        tdAmount.textContent = (pro.price * 3).toFixed(2);
     
         tdProgress.appendChild(progress);
         tr.appendChild(tdId);

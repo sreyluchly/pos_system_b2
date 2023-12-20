@@ -5,8 +5,8 @@ nav {
   display: flex;
   justify-content: space-between;
   background: #373D46;
-  border-left: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
   z-index: 100;
 }
 nav .nav-left {
@@ -76,8 +76,8 @@ nav {
   display: flex;
   justify-content: space-between;
   background: #373D46;
-  border-left: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
   z-index: 100;
 }
 nav .nav-left {
@@ -126,7 +126,7 @@ nav .nav-right button span {
   grid-column: 1/3;
   padding: 20px 30px;
   color: #066A69;
-  background: #eeeeee;
+  background: #e3e3e3;
 }
 
 ul,
@@ -139,12 +139,12 @@ aside {
   grid-column: 1/3;
   display: flex;
   flex-direction: column;
-  background-color: #eeeeee;
+  background-color: #e3e3e3;
 }
 .menu a {
   color: #373D46;
   padding: 20px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #e3e3e3;
   transition: 0.3s;
   cursor: pointer;
   border-radius: 0px 20px 20px 0px;
@@ -220,7 +220,7 @@ main .all-cate {
 main .all-cate button {
   padding: 10px 30px;
   background: #e4ae27;
-  border: 1px solid #eeeeee;
+  border: 1px solid #e3e3e3;
   color: rgb(101, 101, 101);
 }
 main .all-cate .active {
@@ -262,7 +262,7 @@ main .table-container table tbody tr:hover {
 }
 main .table-container table td, main .table-container table th {
   padding: 8px;
-  border: 1px solid #eeeeee;
+  border: 1px solid #e3e3e3;
 }
 main .table-container table td {
   padding: 10px;
@@ -335,7 +335,7 @@ main .table-container table td:nth-child(3) span:nth-child(2) {
   flex-direction: column;
 }
 .form-container form input, .form-container form textarea {
-  border: 1px solid #eeeeee;
+  border: 1px solid #e3e3e3;
   padding: 5px;
   border-radius: 2px;
   outline: 1px ridge rgba(132, 132, 132, 0.3);

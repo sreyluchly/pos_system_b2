@@ -87,7 +87,6 @@ function checkout(event) {
     for (const pro of proCheckout) {
       if (pro.name == product.name) {
         pro.quantity = parseInt(pro.quantity) + 1;
-        saveStorage();
         displayProCheckout();
         return;
       }
