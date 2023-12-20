@@ -46,5 +46,4 @@ function displayCustomer() {
 }
 
 loadStorage();
-saveStorage();
 displayCustomer();
