@@ -1,7 +1,7 @@
 button {
   padding: 10px 20px;
   font-size: 15px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #066A69;
   color: white;
   transition: 0.4s;
@@ -24,23 +24,29 @@ button {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  line-height: 1.5em;
 }
 
 body {
   display: flex;
-  align-items: center;
-  padding: 100px;
+  height: 100vh;
+}
+body .content {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  gap: 10px;
+}
+body .content button {
+  background: #e4ae27;
+  border: none;
+  padding: 15px 40px;
+}
+body .content button:hover {
+  background: hsl(43, 88%, 44%);
 }
 body img {
-  width: 70%;
-  margin-left: auto;
-}
-body p {
-  padding: 10px;
-}
-body button {
-  border: none;
-  padding: 15px;
-  background: #e4ae27;
-  cursor: pointer;
+  width: 55%;
 }/*# sourceMappingURL=home.css.map */

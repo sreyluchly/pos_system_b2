@@ -5,24 +5,28 @@
     margin: 0;
     padding: 0;
     font-family: $mainFont;
+    line-height: 1.5em;
 }
 body {
     display: flex;
-    align-items: center;
-    padding: 100px;
+    height: 100vh;
+    .content {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 100px;
+        gap: 10px;
+        button {
+            background: $mainBtnActive;
+            border: none;
+            padding: 15px 40px;
+            &:hover {
+                background: hsl(43, 88%, 44%);
+            }
+        }
+    }
     img {
-        width: 70%;
-        margin-left: auto;
-    }
-    p{
-        padding: 10px;
-    }
-    button{
-        border: none;
-        padding: 15px;
-        background: $mainBtnActive;
-        cursor: pointer;
+        width: 55%;
     }
 }
-
-

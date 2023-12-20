@@ -13,7 +13,7 @@
 <body>
 
     <div class="logo">
-        <h2>POS System</h2>
+        <a href="/home.html"><h2>POS System</h2></a>
     </div>
 
     <nav>
@@ -23,7 +23,7 @@
         <div class="nav-right">
             <!-- <span class="material-symbols-outlined">menu</span> -->
             <div class="profile">
-                <p id="name">Name</p><span class="material-symbols-outlined">Lock</span>
+                <p id="name">Mengkorng</p><span class="material-symbols-outlined">Lock</span>
             </div>
             <button type="button">
                 <span class="material-symbols-outlined dark">dark_mode</span>
@@ -64,14 +64,8 @@
         </a>
     </ul>
     <main>
-        <div class="all-cate">
-            <button class="cate active">All Category</button>
-            <button class="cate">All Category</button>
-            <button class="cate">All Category</button>
-            <button class="cate">All Category</button>
-        </div>
         <div class="table-container">
-            <button class="add" id="add">
+            <button class="add" id="add" onclick="addCate()">
                 <span class="material-symbols-outlined">add</span>
                 Add Category
             </button>
@@ -83,19 +77,28 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>Khmer Food</td>
-                        <td>
-                            <span class="material-symbols-outlined">delete</span>
-                            <span class="material-symbols-outlined">edit</span>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody></tbody>
             </table>
         </div>
     </main>
+    <div class="form-container" id="form">
+        <span class="material-symbols-outlined" id="close">close</span>
+        <form>
+            <hr>
+            <h2>Add New Category</h2>
+            <hr>
+            <div class="cate-name">
+                <label for="catename">Category Name : </label>
+                <input type="text" name="catename" id="catename" required placeholder="Name*" />
+            </div>
+            <div class="cate-descript">
+                <label for="descipt">Description :</label>
+                <textarea name="description" id="description" placeholder="description*"></textarea>
+            </div>
+            <button type="button" id="addCategory" onclick="createCate()">Submit</button>
+        </form>
+    </div>
+
     <script src="../js/category.js"></script>
 </body>
 

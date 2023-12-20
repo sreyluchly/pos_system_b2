@@ -110,7 +110,7 @@ aside {
 button {
   padding: 10px 20px;
   font-size: 15px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #066A69;
   color: white;
   transition: 0.4s;
@@ -161,6 +161,7 @@ main .search-item #filter {
   color: black;
   border: 1px solid #eeeeee;
   padding: 0px 5px;
+  background: transparent;
 }
 main .search-item #filter:active {
   outline: 1px ridge rgba(132, 132, 132, 0.3);
@@ -355,8 +356,8 @@ aside .checkout .confirm button:nth-child(1) {
   height: 50px;
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .form-container #close:active {
   background: rgba(255, 255, 255, 0.3647058824);

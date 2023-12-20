@@ -4,6 +4,7 @@
 main {
     grid-column: 3 / 13;
     padding: 40px;
+    overflow-y: scroll;
     .content {
         display: flex;
         flex-direction: column;

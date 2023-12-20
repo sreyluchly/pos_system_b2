@@ -2,10 +2,13 @@ const mainContainer = document.querySelector(".main-container");
 const tbody = document.querySelector("tbody");
 const formContainer = document.querySelector(".form-container");
 const inputSubmit = document.querySelectorAll('form input');
+const inputSearch = document.getElementById('search');
+const allCate = document.getElementById("allCate");
 let arrayProduct = [];
 let proId;
 let proCheckout = [];
 let productOrderd = [];
+let categories = [];
 
 function saveStorage() {
     localStorage.setItem("arrayProduct", JSON.stringify(arrayProduct));
@@ -20,6 +23,7 @@ function loadStorage() {
     if (JSON.parse(localStorage.getItem("productOrderd")) != null) {
         productOrderd = JSON.parse(localStorage.getItem("productOrderd"));
     }
+    categories = JSON.parse(localStorage.getItem("categories"));
 }
 
 function show(element) {
@@ -160,7 +164,7 @@ document.getElementById("submit").onclick = (event) => {
     }
     let userInfo = {
         id: productOrderd.length + 1,
-        name: document.getElementById("f-name").value + document.getElementById("l-name").value,
+        name: document.getElementById("f-name").value + " " + document.getElementById("l-name").value,
         email: document.getElementById("email").value,
         product: proCheckout
     };
@@ -177,8 +181,38 @@ document.getElementById("checkout").onclick = () => {
     }
     show(formContainer);
 }
+
+// Create filter options
+function filter() {
+    let all = document.createElement("option");
+    all.value = "All";
+    all.textContent = "All Category";
+    allCate.appendChild(all);
+    for (const cateName of categories) {
+        let option = document.createElement("option");
+        option.value = cateName;
+        option.textContent = cateName
+        allCate.appendChild(option);
+    }
+}
+
+// Filter product
+allCate.onclick = (event) => {
+    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    if (event.target.value != "All") {
+        arrayProduct = arrayProduct.filter((product) => product.category == event.target.value);
+    }
+    showProduct();
+}
+
+// Search products
+inputSearch.oninput = (event) => {
+    arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    arrayProduct = arrayProduct.filter((product) => product.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    showProduct();
+}
+
 loadStorage();
 showProduct();
 displayProCheckout();
-
-// localStorage.clear()
+filter();

@@ -8,17 +8,20 @@ const allCate = document.getElementById('allCate');
 const add = document.getElementById("add");
 const inputSearch = document.getElementById('search');
 const inputsInForm = document.querySelectorAll('form input');
+const cate = document.getElementById("cate");
 
 let proId;
 
 let arrayProduct = [
     {id: 1, img: "../IMG/image1.jpg", name: "Ash", quantity: 10, price: 10, category: "American"},
-    {id: 2, img: "../IMG/image2.jpg", name: "Spaghetti", quantity: 15, price: 10, category: "Italy"},
-    {id: 3, img: "../IMG/image3.jpg", name: "Chinese Noodles", quantity: 20, price: 5, category: "Other"},
-    {id: 4, img: "../IMG/image4.jpg", name: "Sushi", quantity: 5, price: 100, category: "Other"},
+    {id: 2, img: "../IMG/image2.jpg", name: "Spaghetti", quantity: 15, price: 10, category: "Italian"},
+    {id: 3, img: "../IMG/image3.jpg", name: "Raman Noodles", quantity: 20, price: 5, category: "Japanese"},
+    {id: 4, img: "../IMG/image4.jpg", name: "Sushi", quantity: 5, price: 100, category: "Japanese"},
     {id: 5, img: "../IMG/image6.jpg", name: "Samon Fried", quantity: 15, price: 15, category: "American"},
     {id: 6, img: "../IMG/image9.jpg", name: "Khmer Noodles", quantity: 100, price: 5, category: "Khmer"}
 ];
+
+let categories = [];
 
 let arrayDetail = [];
 // Show and hide Elements
@@ -36,8 +39,10 @@ function saveStorage() {
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+        categories = JSON.parse(localStorage.getItem("categories"))
     }
 }
+
 function addNewProduct() {
     arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
     let newProduct = {
@@ -67,6 +72,7 @@ function editProduct() {
     arrayProduct[proId].name = document.getElementById("namePro").value;
     arrayProduct[proId].price = document.getElementById("pricePro").value;
     arrayProduct[proId].quantity = document.getElementById("qtyPro").value;
+    arrayProduct[proId].category = document.getElementById("cate").value;
     saveStorage();
     showProduct();
     productDetail();
@@ -92,6 +98,7 @@ function productDetail(event = 0) {
         }
     }
 }
+
 // Show Card
 function showProduct() {
     for (const card of document.querySelectorAll(".card")) {
@@ -110,8 +117,8 @@ function showProduct() {
         cardHeader.className = "card-header";
         cardFooter.className = "card-footer";
         foodName.className = "product-name";
-    
         img.src = arrayProduct[i].img;
+    
         foodName.textContent = arrayProduct[i].name;
         price.textContent = arrayProduct[i].price + "$"; 
         
@@ -125,6 +132,20 @@ function showProduct() {
         mainContainer.appendChild(card);
 
         card.addEventListener("click", productDetail);
+    }
+}
+
+// Create filter options
+function filter() {
+    let all = document.createElement("option");
+    all.value = "All";
+    all.textContent = "All Category";
+    allCate.appendChild(all);
+    for (const cateName of categories) {
+        let option = document.createElement("option");
+        option.value = cateName;
+        option.textContent = cateName
+        allCate.appendChild(option);
     }
 }
 
@@ -154,10 +175,25 @@ function editPro() {
     document.getElementById("qtyPro").value = arrayProduct[proId].quantity;
     add.textContent = "Edit";
 }
+
 function newPro() {
     show(formAdd);
     add.setAttribute("onclick", "addNewProduct()");
     add.textContent = "Add";
+}
+
+function cateOption() {
+    let all = document.createElement("option");
+    all.value = "All";
+    all.textContent = "All Category";
+    cate.appendChild(all);
+
+    for (const cateName of categories) {
+        let option = document.createElement("option");
+        option.value = cateName;
+        option.textContent = cateName
+        cate.appendChild(option);
+    }
 }
 
 // Hide form
@@ -166,6 +202,7 @@ function cancel() {
 }
 // Invoke Function
 loadStorage();
+filter()
+cateOption();
 productDetail();
 showProduct();
-// localStorage.clear();
