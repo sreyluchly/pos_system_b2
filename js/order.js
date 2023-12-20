@@ -18,6 +18,8 @@ function saveStorage() {
 function loadStorage() {
     if (JSON.parse(localStorage.getItem("arrayProduct")) != null) {
         arrayProduct = JSON.parse(localStorage.getItem("arrayProduct"));
+    }
+    if (JSON.parse(localStorage.getItem("proCheckout")) != null) {
         proCheckout = JSON.parse(localStorage.getItem("proCheckout"));
     }
     if (JSON.parse(localStorage.getItem("productOrderd")) != null) {
