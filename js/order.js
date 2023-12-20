@@ -90,6 +90,7 @@ function checkout(event) {
       if (pro.name == product.name) {
         pro.quantity = parseInt(pro.quantity) + 1;
         displayProCheckout();
+        saveStorage();
         return;
       }
     }
